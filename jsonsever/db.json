@@ -1,0 +1,448 @@
+{
+  "products": [
+    {
+      "img": "./img/n2.jfif",
+      "name": "Ốp Điện thoại iPhone 8 Plus Quốc tế siêu cute",
+      "oldprice": "120.000",
+      "newprice": "89.000",
+      "sold": "121",
+      "address": "Nam Định",
+      "id": 1
+    },
+    {
+      "img": "./img/ip7plus.jpg",
+      "name": "Điện thoại iPhone 7 Plus Quốc tế",
+      "oldprice": "8.900.000",
+      "newprice": "8.600.000",
+      "sold": "12",
+      "address": "Hà Nội",
+      "id": 2
+    },
+    {
+      "img": "./img/_huawei-p30-lite-trang-1.png",
+      "name": "Ốp Điện thoại iPhone 8 Plus Quốc tế siêu cute",
+      "oldprice": "5.590.000",
+      "newprice": "5.390.000 ",
+      "sold": "43",
+      "address": "Hà Nội",
+      "id": 3
+    },
+    {
+      "img": "./img/airpod_1.jfif",
+      "name": "[Hàng Mới Về] Tai Nghe Bluetooth Airpods Pro TWS - Có đổi tên, sack Không dây - BH 1 đổi 1",
+      "oldprice": "850.000",
+      "newprice": "450.000",
+      "sold": "4k5",
+      "address": "Hà Nội",
+      "id": 5
+    },
+    {
+      "id": 4,
+      "img": "/img/ipad2019.jfif",
+      "name": "Ipad 2019 - Hàng chính hãng",
+      "sold": "12",
+      "address": "Hải Phòng",
+      "oldprice": "9.990.000",
+      "newprice": "9.068.000"
+    },
+    {
+      "img": "/img/opkinh.jfif",
+      "name": "Kính cường lực Full Màn 21D cho 5/5s/6/6plus/6s/6s plus/6/7/7plus/8/8plus/x/xs/xs max/11/11 pro/11 promax - Shin case",
+      "sold": "12k1",
+      "address": "Hà Nội",
+      "oldprice": "",
+      "newprice": "12.000",
+      "id": 6
+    },
+    {
+      "img": "/img/sacduphong.jfif",
+      "name": "✔CHÍNH HÃNG✔Pin Sạc Dự Phòng 10000mAh/20000mAh 2 cổng sạc in/out -Hoco J42 High power",
+      "sold": "5k1",
+      "address": "Hà Nội",
+      "oldprice": "420.000",
+      "newprice": "248.000",
+      "id": 7
+    },
+    {
+      "img": "/img/protectsac.jfif",
+      "name": "Dụng cụ bảo vệ cáp sạc, tai nghe hoạt hình",
+      "sold": "1k3",
+      "address": "Hà Nội",
+      "oldprice": "1.000",
+      "newprice": "1.800",
+      "id": 8
+    }
+  ],
+  "product-details": [
+    {
+      "id": 1,
+      "imgs": [
+        {
+          "img": "/img/n2.jfif"
+        },
+        {
+          "img": "/img/oplungip5.jfif"
+        },
+        {
+          "img": "/img/oplungip2.jfif"
+        },
+        {
+          "img": "/img/oplungip3.jfif"
+        },
+        {
+          "img": "/img/oplungip4.jfif"
+        },
+        {
+          "img": "/img/oplungip1.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc",
+        "type2": "Điện thoại"
+      },
+      "colors": [
+        {
+          "color": "[HD-01]Hồng"
+        },
+        {
+          "color": "[HD-02]Tím"
+        }
+      ],
+      "configs": [
+        {
+          "config": "6/6S"
+        },
+        {
+          "config": "7/7S"
+        }
+      ]
+    },
+    {
+      "imgs": [
+        {
+          "img": "/img/ip7plus.jpg"
+        },
+        {
+          "img": "/img/ip7s_1.jfif"
+        },
+        {
+          "img": "/img/ip7s_5.jfif"
+        },
+        {
+          "img": "/img/oplungip2.jfif"
+        },
+        {
+          "img": "/img/ip7s_4.jfif"
+        },
+        {
+          "img": "/img/ip7s_6.jfif"
+        },
+        {
+          "img": "/img/ip7s_3.jfif"
+        },
+        {
+          "img": "/img/ip7s_2.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc",
+        "type2": "Cấu hình"
+      },
+      "colors": [
+        {
+          "color": "Đen"
+        },
+        {
+          "color": "Hồng"
+        },
+        {
+          "color": "Tím"
+        },
+        {
+          "color": "Bạc"
+        },
+        {
+          "color": "Đen nhám"
+        },
+        {
+          "color": "Gold"
+        }
+      ],
+      "configs": [
+        {
+          "config": "32GB"
+        },
+        {
+          "config": "128GB"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "imgs": [
+        {
+          "img": "./img/_huawei-p30-lite-trang-1.png"
+        },
+        {
+          "img": "/img/huawei-p30-lite-den-1.jpg"
+        },
+        {
+          "img": "/img/huawei-p30-lite-trang-1-org.jpg"
+        },
+        {
+          "img": "/img/huawei-p30-lite-xanh-duong-1-org.jpg"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc",
+        "type2": "Cấu hình"
+      },
+      "colors": [
+        {
+          "color": "Xanh dương"
+        },
+        {
+          "color": "Đen"
+        },
+        {
+          "color": "Trắng"
+        }
+      ],
+      "configs": [
+        {
+          "config": "128GB"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "imgs": [
+        {
+          "img": "./img/ipad2019_1.jfif"
+        },
+        {
+          "img": "/img/ipad2019_2.jfif"
+        },
+        {
+          "img": "/img/ipad2019_7.jfif"
+        },
+        {
+          "img": "/img/ipad2019_3.jfif"
+        },
+        {
+          "img": "/img/ipad2019_5.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc",
+        "type2": "Cấu hình"
+      },
+      "colors": [
+        {
+          "color": "Bạc"
+        },
+        {
+          "color": "Gold"
+        },
+        {
+          "color": "Trắng"
+        }
+      ],
+      "configs": [
+        {
+          "config": "128GB"
+        },
+        {
+          "config": "32GB"
+        },
+        {
+          "config": "64GB"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "imgs": [
+        {
+          "img": "./img/airpod_1.jfif"
+        },
+        {
+          "img": "/img/airpod_2.jfif"
+        },
+        {
+          "img": "/img/airpod_3.jfif"
+        },
+        {
+          "img": "/img/airpod_4.jfif"
+        },
+        {
+          "img": "/img/airpod_5.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc"
+      },
+      "colors": [
+        {
+          "color": "Trắng"
+        },
+        {
+          "color": "Đen"
+        }
+      ],
+      "configs": [],
+      "id": 5
+    },
+    {
+      "imgs": [
+        {
+          "img": "/img/opkinh.jfif"
+        },
+        {
+          "img": "/img/opkinh_1.jfif"
+        },
+        {
+          "img": "/img/opkinh_2.jfif"
+        },
+        {
+          "img": "/img/opkinh_3.jfif"
+        },
+        {
+          "img": "/img/opkinh_4.jfif"
+        },
+        {
+          "img": "/img/opkinh_5.jfif"
+        },
+        {
+          "img": "/img/opkinh_6.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu sắc",
+        "type2": "Điện thoại"
+      },
+      "colors": [
+        {
+          "color": "[PK-F]Trắng"
+        },
+        {
+          "color": "[PK-G]Đen"
+        }
+      ],
+      "configs": [
+        {
+          "config": "[A+D] 6/6s"
+        },
+        {
+          "config": "[B+D] 6plus/6Splus"
+        },
+        {
+          "config": "[B+D] 7plus/8plus"
+        },
+        {
+          "config": "[E] X/Xs/11Pro"
+        },
+        {
+          "config": "[F] Xsmax/11promax"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "imgs": [
+        {
+          "img": "/img/sacduphong.jfif"
+        },
+        {
+          "img": "/img/sacduphong_1.jfif"
+        },
+        {
+          "img": "/img/sacduphong_2.jfif"
+        },
+        {
+          "img": "/img/sacduphong_3.jfif"
+        },
+        {
+          "img": "/img/sacduphong_4.jfif"
+        },
+        {
+          "img": "/img/sacduphong_5.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Màu ",
+        "type2": "Dung lượng"
+      },
+      "colors": [
+        {
+          "color": "Trắng"
+        },
+        {
+          "color": "Đen"
+        },
+        {
+          "color": "Hồng"
+        }
+      ],
+      "configs": [
+        {
+          "config": "10000mAh"
+        },
+        {
+          "config": "20000mAh"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "imgs": [
+        {
+          "img": "/img/protectsac.jfif"
+        },
+        {
+          "img": "/img/projectsac_1.jfif"
+        },
+        {
+          "img": "/img/projectsac_2.jfif"
+        },
+        {
+          "img": "/img/projectsac_3.jfif"
+        },
+        {
+          "img": "/img/projectsac_4.jfif"
+        },
+        {
+          "img": "/img/projectsac_5.jfif"
+        }
+      ],
+      "types": {
+        "type1": "Mẫu"
+        
+      },
+      "colors": [
+        {
+          "color": "đám mây"
+        },
+        {
+          "color": "hạc hồng"
+        },
+        {
+          "color": "gấu"
+        },
+        {
+          "color": "ếch"
+        },
+        {
+          "color": "- Sóc"
+        },
+        {
+          "color": "Mèo"
+        }
+      ],
+      "configs":[
+
+      ],
+      "id": 8
+    }
+  ]
+}
