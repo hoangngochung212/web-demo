@@ -346,7 +346,7 @@ function showModalCart(){
             let pos = imgSrcs.indexOf('img') +3;
             let partPath = imgSrcs.slice(pos);
             
-            items.img = `img${partPath}`;
+            items.img = `./img${partPath}`;
             let name = element.children[1].children[0].innerText;
             items.name = name;
             let priceOld = element.children[1].children[1].children[0].innerText;
