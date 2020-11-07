@@ -1516,7 +1516,7 @@ i.home-product_action-like-icon_liked{
     margin-right: -12px;
     top: 44%;
     right: 0;
-    z-index: 111111111111111;
+    z-index: 1;
     
     background-color: #ffff;
     font-size: 20px;
@@ -1540,7 +1540,7 @@ i.home-product_action-like-icon_liked{
     margin-left: -12px;
     top: 44%;
     left: 0;
-    z-index: 111111111111111;
+    z-index: 1;
     display: none;
     background-color: #ffff;
     font-size: 20px;
