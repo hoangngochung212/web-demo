@@ -89,9 +89,47 @@ var sliders = document.querySelector('.carousel-container');
  })
 setTimer();
 
+// carousel
+
+function ofsCarousel(){
+
+    var nextBtn = document.querySelector('.carousel_btn-next');
+    var prevBtn = document.querySelector('.carousel_btn-prev');
+    var listItems = document.querySelector('.image-carousel__item-list');
+    var itemElement = document.querySelectorAll('.image-carousel__item ');
+    var size = listItems.clientWidth;
+    
+    
+    nextBtn.addEventListener('click',()=>{
+        listItems.style.transform = 'translateX('+ -size +'px)';
+        listItems.style.transition ='all 500ms ease 0s';
+        nextBtn.style.display = 'none';
+        prevBtn.style.display='block';
+    })
+    prevBtn.addEventListener('click',()=>{
+        listItems.style.transform = 'translateX('+ 0 +'px)';
+        listItems.style.transition ='all 500ms ease 0s';
+        nextBtn.style.display = 'block';
+        prevBtn.style.display='none';
+    })
+   console.log( document.querySelector('.img_carousel'))
+   document.querySelector('.image-carousel__item-list-wrapper').addEventListener('mousemove',()=>{
+        nextBtn.style.transform ='scale(2)';
+        prevBtn.style.transform ='scale(2)';
+   })
+   document.querySelector('.image-carousel__item-list-wrapper').addEventListener('mouseout',()=>{
+    nextBtn.style.transform ='scale(1)';
+    prevBtn.style.transform ='scale(1)';
+})
+    
+   
+}
+ofsCarousel();
+
 // Login $ resgistration
 
 function loginResgis(){
+    
     var resgisItem = document.querySelector('.registration');
     var loginItem = document.querySelector('.login');
     var formLogin = document.querySelector('.form-login');

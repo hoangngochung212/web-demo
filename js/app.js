@@ -33,6 +33,7 @@ if(imgItems[0])
 })
 
 }
+
 function moveImg(){
     var imgElement = document.querySelectorAll('.item');
     var item = document.createElement('div');

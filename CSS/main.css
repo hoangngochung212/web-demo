@@ -1444,12 +1444,46 @@ i.home-product_action-like-icon_liked{
 
 /* carousel */
 
-.of_carousel{
-    margin-top: 30px;
-    background-color: #fff;
-}
-.carousel_img{
+.image-carousel__item-list-wrapper{
+    position: relative;
     width: 100%;
+    height: 100%;
+}
+.img_carousel{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.image-carousel__item-list{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.image-carousel__item{
+   
+   height: 100%;
+   float: left;
+}
+.ofs-carousel-two{
+   
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.ofs-carousel-img img{
+    width: 100%;
+}
+.ofs-carousel__item{
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid rgba(0,0,0,.05);
+    
+    display: block;
+}
+.ofs-carousel__item:hover {
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.08)
 }
 .carousel-header{
     display: flex;
@@ -1474,7 +1508,53 @@ i.home-product_action-like-icon_liked{
 .carousel :hover{
     box-shadow: 0 0 4px 0 rgba(0,0,0,.08);
 }
-
+.carousel_btn-next{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin-right: -12px;
+    top: 44%;
+    right: 0;
+    z-index: 111111111111111;
+    
+    background-color: #ffff;
+    font-size: 20px;
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all .1s;
+    
+}
+.carousel_btn-next >.icon_btn{
+    position: absolute;
+    font-size: 12px;
+    top: 7px;
+    left: 9px;
+  
+}
+.carousel_btn-prev{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin-left: -12px;
+    top: 44%;
+    left: 0;
+    z-index: 111111111111111;
+    display: none;
+    background-color: #ffff;
+    font-size: 20px;
+    box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all .1s;
+}
+.carousel_btn-prev >.icon_btn {
+    position: absolute;
+    font-size: 12px;
+    top: 7px;
+    right: 9px;
+  
+}
 .navbar-exit{
     display: none !important;
 }
