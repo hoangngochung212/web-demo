@@ -691,7 +691,6 @@ function renderProducts(products){
                     </h4>
                 </div>
                 <div class="home-product_price">
-
                     <span class="price old-price">${product.oldprice}</span>
                     <span class="unit">₫</span>
                     <span class="price">${product.newprice}</span>
@@ -723,12 +722,9 @@ function renderProducts(products){
     
     }
         
-
         );
-    
 
     listProduct.innerHTML = htmls.join('');
-    
     rateHearts();
     addClassPrice();
     runSortCart();
