@@ -46,7 +46,7 @@
       "newprice": "9.068.000"
     },
     {
-      "img": "/img/opkinh.jfif",
+      "img": "./img/opkinh.jfif",
       "name": "Kính cường lực Full Màn 21D cho 5/5s/6/6plus/6s/6s plus/6/7/7plus/8/8plus/x/xs/xs max/11/11 pro/11 promax - Shin case",
       "sold": "12k1",
       "address": "Hà Nội",
@@ -55,7 +55,7 @@
       "id": 6
     },
     {
-      "img": "/img/sacduphong.jfif",
+      "img": "./img/sacduphong.jfif",
       "name": "✔CHÍNH HÃNG✔Pin Sạc Dự Phòng 10000mAh/20000mAh 2 cổng sạc in/out -Hoco J42 High power",
       "sold": "5k1",
       "address": "Hà Nội",
@@ -64,7 +64,7 @@
       "id": 7
     },
     {
-      "img": "/img/protectsac.jfif",
+      "img": "./img/protectsac.jfif",
       "name": "Dụng cụ bảo vệ cáp sạc, tai nghe hoạt hình",
       "sold": "1k3",
       "address": "Hà Nội",
@@ -78,22 +78,22 @@
       "id": 1,
       "imgs": [
         {
-          "img": "/img/n2.jfif"
+          "img": "./img/n2.jfif"
         },
         {
-          "img": "/img/oplungip5.jfif"
+          "img": "./img/oplungip5.jfif"
         },
         {
-          "img": "/img/oplungip2.jfif"
+          "img": "./img/oplungip2.jfif"
         },
         {
-          "img": "/img/oplungip3.jfif"
+          "img": "./img/oplungip3.jfif"
         },
         {
-          "img": "/img/oplungip4.jfif"
+          "img": "./img/oplungip4.jfif"
         },
         {
-          "img": "/img/oplungip1.jfif"
+          "img": "./img/oplungip1.jfif"
         }
       ],
       "types": {
@@ -120,28 +120,28 @@
     {
       "imgs": [
         {
-          "img": "/img/ip7plus.jpg"
+          "img": "./img/ip7plus.jpg"
         },
         {
-          "img": "/img/ip7s_1.jfif"
+          "img": "./img/ip7s_1.jfif"
         },
         {
-          "img": "/img/ip7s_5.jfif"
+          "img": "./img/ip7s_5.jfif"
         },
         {
-          "img": "/img/oplungip2.jfif"
+          "img": "./img/oplungip2.jfif"
         },
         {
-          "img": "/img/ip7s_4.jfif"
+          "img": "./img/ip7s_4.jfif"
         },
         {
-          "img": "/img/ip7s_6.jfif"
+          "img": "./img/ip7s_6.jfif"
         },
         {
-          "img": "/img/ip7s_3.jfif"
+          "img": "./img/ip7s_3.jfif"
         },
         {
-          "img": "/img/ip7s_2.jfif"
+          "img": "./img/ip7s_2.jfif"
         }
       ],
       "types": {
@@ -184,13 +184,13 @@
           "img": "./img/_huawei-p30-lite-trang-1.png"
         },
         {
-          "img": "/img/huawei-p30-lite-den-1.jpg"
+          "img": "./img/huawei-p30-lite-den-1.jpg"
         },
         {
-          "img": "/img/huawei-p30-lite-trang-1-org.jpg"
+          "img": "./img/huawei-p30-lite-trang-1-org.jpg"
         },
         {
-          "img": "/img/huawei-p30-lite-xanh-duong-1-org.jpg"
+          "img": "./img/huawei-p30-lite-xanh-duong-1-org.jpg"
         }
       ],
       "types": {
@@ -221,16 +221,16 @@
           "img": "./img/ipad2019_1.jfif"
         },
         {
-          "img": "/img/ipad2019_2.jfif"
+          "img": "./img/ipad2019_2.jfif"
         },
         {
-          "img": "/img/ipad2019_7.jfif"
+          "img": "./img/ipad2019_7.jfif"
         },
         {
-          "img": "/img/ipad2019_3.jfif"
+          "img": "./img/ipad2019_3.jfif"
         },
         {
-          "img": "/img/ipad2019_5.jfif"
+          "img": "./img/ipad2019_5.jfif"
         }
       ],
       "types": {
@@ -267,16 +267,16 @@
           "img": "./img/airpod_1.jfif"
         },
         {
-          "img": "/img/airpod_2.jfif"
+          "img": "./img/airpod_2.jfif"
         },
         {
-          "img": "/img/airpod_3.jfif"
+          "img": "./img/airpod_3.jfif"
         },
         {
-          "img": "/img/airpod_4.jfif"
+          "img": "./img/airpod_4.jfif"
         },
         {
-          "img": "/img/airpod_5.jfif"
+          "img": "./img/airpod_5.jfif"
         }
       ],
       "types": {
@@ -296,25 +296,25 @@
     {
       "imgs": [
         {
-          "img": "/img/opkinh.jfif"
+          "img": "./img/opkinh.jfif"
         },
         {
-          "img": "/img/opkinh_1.jfif"
+          "img": "./img/opkinh_1.jfif"
         },
         {
-          "img": "/img/opkinh_2.jfif"
+          "img": "./img/opkinh_2.jfif"
         },
         {
-          "img": "/img/opkinh_3.jfif"
+          "img": "./img/opkinh_3.jfif"
         },
         {
-          "img": "/img/opkinh_4.jfif"
+          "img": "./img/opkinh_4.jfif"
         },
         {
-          "img": "/img/opkinh_5.jfif"
+          "img": "./img/opkinh_5.jfif"
         },
         {
-          "img": "/img/opkinh_6.jfif"
+          "img": "./img/opkinh_6.jfif"
         }
       ],
       "types": {
@@ -351,22 +351,22 @@
     {
       "imgs": [
         {
-          "img": "/img/sacduphong.jfif"
+          "img": "./img/sacduphong.jfif"
         },
         {
-          "img": "/img/sacduphong_1.jfif"
+          "img": "./img/sacduphong_1.jfif"
         },
         {
-          "img": "/img/sacduphong_2.jfif"
+          "img": "./img/sacduphong_2.jfif"
         },
         {
-          "img": "/img/sacduphong_3.jfif"
+          "img": "./img/sacduphong_3.jfif"
         },
         {
-          "img": "/img/sacduphong_4.jfif"
+          "img": "./img/sacduphong_4.jfif"
         },
         {
-          "img": "/img/sacduphong_5.jfif"
+          "img": "./img/sacduphong_5.jfif"
         }
       ],
       "types": {
@@ -397,22 +397,22 @@
     {
       "imgs": [
         {
-          "img": "/img/protectsac.jfif"
+          "img": "./img/protectsac.jfif"
         },
         {
-          "img": "/img/projectsac_1.jfif"
+          "img": "./img/projectsac_1.jfif"
         },
         {
-          "img": "/img/projectsac_2.jfif"
+          "img": "./img/projectsac_2.jfif"
         },
         {
-          "img": "/img/projectsac_3.jfif"
+          "img": "./img/projectsac_3.jfif"
         },
         {
-          "img": "/img/projectsac_4.jfif"
+          "img": "./img/projectsac_4.jfif"
         },
         {
-          "img": "/img/projectsac_5.jfif"
+          "img": "./img/projectsac_5.jfif"
         }
       ],
       "types": {

@@ -112,7 +112,7 @@ function ofsCarousel(){
         nextBtn.style.display = 'block';
         prevBtn.style.display='none';
     })
-   console.log( document.querySelector('.img_carousel'))
+ 
    document.querySelector('.image-carousel__item-list-wrapper').addEventListener('mousemove',()=>{
         nextBtn.style.transform ='scale(2)';
         prevBtn.style.transform ='scale(2)';
