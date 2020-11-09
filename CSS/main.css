@@ -1354,7 +1354,10 @@ i.home-product_action-like-icon_liked{
     color: rgba(0,0,0,.65);
     font-size: 12px;
 }
-
+.home-product_brand{
+    font-size: 12px;
+    margin-left: 10px;
+}
 .home-product_action-rate_gold{
     color: rgb(255,206,61);
 }
@@ -1523,7 +1526,7 @@ i.home-product_action-like-icon_liked{
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     transition: all .1s;
-    
+    cursor: pointer;
 }
 .carousel_btn-next >.icon_btn{
     position: absolute;
@@ -1547,6 +1550,7 @@ i.home-product_action-like-icon_liked{
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.3);
     border-radius: 50%;
     transition: all .1s;
+    cursor: pointer;
 }
 .carousel_btn-prev >.icon_btn {
     position: absolute;

@@ -5,7 +5,7 @@
       "name": "Ốp Điện thoại iPhone 8 Plus Quốc tế siêu cute",
       "oldprice": "120.000",
       "newprice": "89.000",
-      "sold": "121",
+      "brand": "no brand",
       "address": "Nam Định",
       "id": 1
     },
@@ -14,16 +14,16 @@
       "name": "Điện thoại iPhone 7 Plus Quốc tế",
       "oldprice": "8.900.000",
       "newprice": "8.600.000",
-      "sold": "12",
+      "brand": "Apple",
       "address": "Hà Nội",
       "id": 2
     },
     {
       "img": "./img/huawei.png",
-      "name": "Ốp Điện thoại iPhone 8 Plus Quốc tế siêu cute",
+      "name": "Điện thoại Huawei p30",
       "oldprice": "5.590.000",
       "newprice": "5.390.000 ",
-      "sold": "43",
+      "brand": "Huawei",
       "address": "Hà Nội",
       "id": 3
     },
@@ -32,7 +32,7 @@
       "name": "[Hàng Mới Về] Tai Nghe Bluetooth Airpods Pro TWS - Có đổi tên, sack Không dây - BH 1 đổi 1",
       "oldprice": "850.000",
       "newprice": "450.000",
-      "sold": "4k5",
+      "brand": "Apple",
       "address": "Hà Nội",
       "id": 5
     },
@@ -40,7 +40,7 @@
       "id": 4,
       "img": "./img/ipad2019.jfif",
       "name": "Ipad 2019 - Hàng chính hãng",
-      "sold": "12",
+      "brand": "Oppo",
       "address": "Hải Phòng",
       "oldprice": "9.990.000",
       "newprice": "9.068.000"
@@ -48,29 +48,20 @@
     {
       "img": "./img/opkinh.jfif",
       "name": "Kính cường lực Full Màn 21D cho 5/5s/6/6plus/6s/6s plus/6/7/7plus/8/8plus/x/xs/xs max/11/11 pro/11 promax - Shin case",
-      "sold": "12k1",
+      "brand": "No brand",
       "address": "Hà Nội",
       "oldprice": "32.000",
       "newprice": "12.000",
       "id": 6
     },
     {
-      "img": "./img/sacduphong.jfif",
-      "name": "✔CHÍNH HÃNG✔Pin Sạc Dự Phòng 10000mAh/20000mAh 2 cổng sạc in/out -Hoco J42 High power",
-      "sold": "5k1",
+      "name": "SIM VD89 , VD149 12T-720GB đến 1440GB ( Miễn Phí Data ) và Gọi Miễn Phí -Sản phẩm Từ 6 đến 12 Tháng",
+      "oldprice": "689.000",
+      "newprice": "579.000",
       "address": "Hà Nội",
-      "oldprice": "420.000",
-      "newprice": "248.000",
+      "brand": "Vinaphone",
+      "img": "img/_ss-galaxy-s10-xanh-1.png",
       "id": 7
-    },
-    {
-      "img": "./img/protectsac.jfif",
-      "name": "Dụng cụ bảo vệ cáp sạc, tai nghe hoạt hình",
-      "sold": "1k3",
-      "address": "Hà Nội",
-      "oldprice": "1.000",
-      "newprice": "1.800",
-      "id": 8
     }
   ],
   "product-details": [
@@ -417,7 +408,6 @@
       ],
       "types": {
         "type1": "Mẫu"
-        
       },
       "colors": [
         {
@@ -439,9 +429,7 @@
           "color": "Mèo"
         }
       ],
-      "configs":[
-
-      ],
+      "configs": [],
       "id": 8
     }
   ]

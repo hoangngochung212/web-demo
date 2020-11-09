@@ -652,23 +652,78 @@ function exitModal(){
     })
 }
 
+
+// preview img
+function previewImg(){
+    var inputElement = document.getElementById('input-img');
+    inputElement.addEventListener('change',(e)=>{
+
+        var outputElement = document.querySelector('.img-output');
+        outputElement.src = `./img/${e.target.files[0].name}`;
+        outputElement.onload = function(){
+            URL.revokeObjectURL(outputElement.src);
+            document.querySelector('.sell-input_icon').style.zIndex = -1;
+        }
+    })
+}
+previewImg();
+
+
 // fetch api - add cart
-const productApi = 'http://localhost:3002/products';
+var productApi = 'http://localhost:3002/products';
 function start(){
     getProducts(renderProducts);
+    handleCreatProduct();
 }
 start();
+function creatProducts(data, callback){
+    fetch(productApi,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify(data)
+    })
+        .then(response =>response.json())
+        .then(callback)
+}
+
+function handleCreatProduct(){
+    var creatBtn = document.querySelector('#creat-sell');
+    creatBtn.addEventListener('click',(e)=>{
+        e.preventDefault(); 
+        var name = document.querySelector('input[name="name"]').value;
+        var oldprice = document.querySelector('input[name="oldprice"]').value;
+        var newprice = document.querySelector('input[name="newprice"]').value;
+        var address = document.querySelector('input[name="address"]').value;
+        var brand = document.querySelector('input[name="brand"]').value;
+        var img = document.querySelector('input[name="img"]').files[0].name;
+        
+     
+        var formData = {
+            name: name,
+            oldprice: oldprice,
+            newprice: newprice,
+            address: address,
+            brand: brand,
+            img: "img/" + img
+        }
+        creatProducts(formData,function(){
+            getProducts(renderProducts);
+        });
+            
+        
+    })
+}
 function getProducts(callback){
     fetch(productApi)
         .then(function(response){
             return response.json();
-         
         })
         .then(callback);
-        
 }
 function renderProducts(products){
-    const listProduct = document.querySelector('.product-main');
+    var listProduct = document.querySelector('.product-main');
     var htmls = products.map(function(product){
        return `
         <div class="col l-2-4 m-4 c-6">
@@ -691,7 +746,7 @@ function renderProducts(products){
                     </h4>
                 </div>
                 <div class="home-product_price">
-                    <span class="price old-price">${product.oldprice}</span>
+                    <span class="price old-price">₫${product.oldprice}</span>
                     <span class="unit">₫</span>
                     <span class="price">${product.newprice}</span>
                 </div>
@@ -706,11 +761,11 @@ function renderProducts(products){
                         <i class="home-product_action-rate_gold fas fa-star"></i>
                         <i class="home-product_action-rate_gold fas fa-star"></i>
                     </div>
-                    <div class="home-product_action-sold"><span>Đã bán </span>${product.sold}</div>
+                    <div class="home-product_action-sold"><span></span></div>
                    
                 </div>
                 <div class="home-product-origin">
-                    <span class="home-product_brand"></span>
+                    <span class="home-product_brand">${product.brand}</span>
                     <span class="home-product-address">${product.address}</span>
                    
                 </div>
@@ -718,17 +773,12 @@ function renderProducts(products){
         </div>
     </div>
         `;
-        
-    
     }
-        
         );
-
     listProduct.innerHTML = htmls.join('');
     rateHearts();
     addClassPrice();
     runSortCart();
-
     showModalCart();
     
 }

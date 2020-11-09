@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./CSS/grid.css">
     <link rel="stylesheet" href="./CSS/cart-modal.css">
     <link rel="stylesheet" href="./CSS/reponsive.css">
-    
+    <link rel="stylesheet" href="./CSS/sell.css">
 
     <link rel="stylesheet" href="./fonts/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <!-- <script src="https://kit.fontawesome.com/8ec39ef7d4.js" crossorigin="anonymous"></script> -->
@@ -888,8 +888,77 @@
         </div>
 
     </div>
+    <div class="modal-sell">
+        <div class="modal__overlay">
+
+        </div>
+        <div class="modal__body-sell">
+            <div class="sell-main">
+                 <div class="exit-sell">
+                    <i class="fas fa-times"></i>
+                 </div>
+                 <h2 class="sell_header">Thêm sản phẩm mới</h2>
+                <div  class="form-main">
+                     <div class="form-items">
+                         <label for=""> Tên sản phẩm</label>
+                        <div class="form-sell-wrapper">
+                            <input type="text" name="name" id="name-product" class="form-sell" placeholder="Nhập vào">
+                            <span class="form-message"></span>
+                        </div>
+                     </div>
+                     <div class="form-items">
+                        <label for=""> Giá sản phẩm(cũ)</label>
+                       <div class="form-sell-wrapper">
+                           <div class="form-input_prefix">
+                               <span >₫</span>
+                           </div>
+                           <input type="text" name="oldprice" id="old-price" class="form-sell" placeholder="Nhập vào">
+                           <span class="form-message"></span>
+                       </div>
+                       <label for="" class="form-sell-new"> Giá sản phẩm(mới)</label>
+                       <div class="form-sell-wrapper">
+                            <div class="form-input_prefix">
+                                <span >₫</span>
+                            </div>
+                           <input type="text" name="newprice" id="newprice" class="form-sell" placeholder="Nhập vào">
+                           <span class="form-message"></span>
+                       </div>
+                    </div>
+                    <div class="form-items">
+                        <label for=""> Địa chỉ </label>
+                       <div class="form-sell-wrapper">
+                           <input type="text" name="address" id="address" class="form-sell" placeholder="Nhập vào">
+                           <span class="form-message"></span>
+                       </div>
+                       <label for="" class="form-sell-new">Thương hiệu</label>
+                       <div class="form-sell-wrapper">
+                           <input type="text" name="brand" id="brand" class="form-sell" placeholder="Nhập vào">
+                           <span class="form-message"></span>
+                       </div>
+                    </div>
+                    <div class="form-items">
+                        <label for="">Hình ảnh sản phẩm</label>
+                        <input type="file" name="img" id="input-img" accept="image/*">
+                        <label for="input-img" class="input-wrapper">
+                            <div class="sell-input_file">
+                                <img class="img-output">
+                                 <div class="sell-input_icon">
+                                     <span class="input-icon_vertical"></span>
+                                     <span class="input-icon_horizontal"></span>
+                                 </div>
+                            </div>
+                        </label> 
+                    </div>
+                    <div class="form-items">
+                        <button type="submit" class="btn creat-sell" id="creat-sell" >Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
      <script src="./js/main.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/addproduct.js"></script>
 </body>
    
 </html>

@@ -433,3 +433,22 @@ function priceSortMoble(){
     
 }
 priceSortMoble()
+
+// modal--sell
+
+function showModalSell(){
+    var showSell = document.querySelectorAll('.header__navbar-item--set')[0];
+    var overlay = document.querySelectorAll('.modal__overlay')[1];
+    var exitSell = document.querySelector('.exit-sell');
+    
+    showSell.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'flex';
+    })
+    exitSell.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'none';
+    })
+    overlay.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'none';
+    })
+}
+showModalSell();

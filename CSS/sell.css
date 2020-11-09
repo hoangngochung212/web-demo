@@ -1,0 +1,158 @@
+.modal-sell{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    animation: animation linear 0.5s;
+    z-index: 1000;
+    transition: opacity;
+}
+.modal__body-sell{
+    width: 1200px;
+    background-color: #ffff;
+    margin: auto;
+    box-sizing: border-box;
+    z-index: 111111;
+    overflow: auto;
+}
+.sell-main{
+    position: relative;
+    padding: 35px;
+}
+.form-main{
+    display: flex;
+    margin-top: 24px;
+    width: 100%;
+    flex-direction: column;
+    
+}
+.form-items{
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+}
+.form-sell-wrapper{
+    position: relative;
+    flex: 1;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+.form-items label{
+    width: 150px;
+    line-height: 40px;
+}
+.form-sell-new{
+    margin-left: 24px;
+}
+.form-sell{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: 1px solid var(--boder-color);
+    padding: 0 12px;
+    border-radius: 5px;
+}
+.form-input_prefix{
+    position: absolute;
+    top: 8px;
+    left: 12px;
+}
+.form-input_prefix::after{
+    content: '';
+    position: absolute;
+    top:50%;
+    left: 13px;
+    height: 24px;
+    border-left: 1px solid #eee;
+    transform: translateY(-32%);
+}
+.form-input_prefix span {
+    display: flex;
+    font-size: 12px;
+    color:  #999;;
+}
+input[name='newprice'],input[name="oldprice"]{
+   padding: 0 32px;
+}
+#input-img{
+    display: none;
+}
+.input-wrapper{
+    display: flex;
+    margin-left: 12px;
+    width: 115px !important;
+    height: 115px;
+
+}
+.sell-input_file{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #1791f2;
+    border-radius: 2px;
+    cursor: pointer;
+    
+}
+.sell-input_file:hover{
+    background-color: #e8f0f7;
+    
+}
+.sell-input_icon{
+    width: 29px;
+    height: 29px;
+    text-align: center;
+    position: absolute;
+    border-radius: 50%;
+    border: solid 1px #1791f2;
+    color: #1791f2;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    
+}
+/* .sell-input_icon i{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+} */
+.input-icon_vertical{
+    display:block ;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    width: 0.8px;
+    height: 16px;
+    
+    background-color:  #1791f2;
+}
+.input-icon_horizontal{
+    display:block ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    width: 16px;
+    height: 0.8px;
+    font-weight: 400;
+  
+    background-color:  #1791f2;
+}
+.img-output{
+  
+    height: 100%;
+    z-index: 1111;
+    border: none;
+}
+.exit-sell{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+    color: var(--primary-color);
+}
