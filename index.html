@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="./CSS/cart-modal.css">
     <link rel="stylesheet" href="./CSS/reponsive.css">
     <link rel="stylesheet" href="./CSS/sell.css">
-
-    <link rel="stylesheet" href="./fonts/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+     <link rel="stylesheet" href="./fonts/fontawesome-pro/css/all.min.css">
     <!-- <script src="https://kit.fontawesome.com/8ec39ef7d4.js" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -460,6 +459,7 @@
                    
                     <div class="carousel_btn-prev"><i class="icon_btn fas fa-chevron-left"></i></div>
                 </div>
+            </div>
                 <div class="row sm-gutter content">
 
                     <div class="col l-2 m-0 c-0">
@@ -656,7 +656,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+           
         </div>
         <footer class="footer">
             <div class="grid wide">
@@ -893,66 +893,284 @@
 
         </div>
         <div class="modal__body-sell">
-            <div class="sell-main">
-                 <div class="exit-sell">
-                    <i class="fas fa-times"></i>
-                 </div>
-                 <h2 class="sell_header">Thêm sản phẩm mới</h2>
-                <div  class="form-main">
-                     <div class="form-items">
-                         <label for=""> Tên sản phẩm</label>
-                        <div class="form-sell-wrapper">
-                            <input type="text" name="name" id="name-product" class="form-sell" placeholder="Nhập vào">
-                            <span class="form-message"></span>
+            <div class="exit-sell">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="body-sell-wrapper">
+            
+            <div class="sell-main_wrapper">  
+                <div class="sell-main">
+                    <div class="form-main">
+                        <h2 class="sell_header">Thêm sản phẩm mới</h2>
+                        <div class="form-items">
+                            <label for=""> Tên sản phẩm</label>
+                            <div class="form-sell-wrapper">
+                                <input type="text" name="name" id="name-product" class="form-sell" placeholder="Nhập vào">
+                                <span class="form-message"></span>
+                            </div>
                         </div>
-                     </div>
-                     <div class="form-items">
-                        <label for=""> Giá sản phẩm(cũ)</label>
-                       <div class="form-sell-wrapper">
-                           <div class="form-input_prefix">
-                               <span >₫</span>
-                           </div>
-                           <input type="text" name="oldprice" id="old-price" class="form-sell" placeholder="Nhập vào">
-                           <span class="form-message"></span>
-                       </div>
-                       <label for="" class="form-sell-new"> Giá sản phẩm(mới)</label>
-                       <div class="form-sell-wrapper">
-                            <div class="form-input_prefix">
-                                <span >₫</span>
+                        <div class="form-items">
+                            <label for=""> Giá sản phẩm(Từ) </label>
+                            <div class="form-sell-wrapper">
+                                <div class="form-input_prefix">
+                                    <span >₫</span>
+                                </div>
+                                <input type="text" name="oldprice" id="old-price" class="form-sell" placeholder="Nhập vào">
+                                <span class="form-message"></span>
                             </div>
-                           <input type="text" name="newprice" id="newprice" class="form-sell" placeholder="Nhập vào">
-                           <span class="form-message"></span>
-                       </div>
-                    </div>
-                    <div class="form-items">
-                        <label for=""> Địa chỉ </label>
-                       <div class="form-sell-wrapper">
-                           <input type="text" name="address" id="address" class="form-sell" placeholder="Nhập vào">
-                           <span class="form-message"></span>
-                       </div>
-                       <label for="" class="form-sell-new">Thương hiệu</label>
-                       <div class="form-sell-wrapper">
-                           <input type="text" name="brand" id="brand" class="form-sell" placeholder="Nhập vào">
-                           <span class="form-message"></span>
-                       </div>
-                    </div>
-                    <div class="form-items">
-                        <label for="">Hình ảnh sản phẩm</label>
-                        <input type="file" name="img" id="input-img" accept="image/*">
-                        <label for="input-img" class="input-wrapper">
-                            <div class="sell-input_file">
-                                <img class="img-output">
-                                 <div class="sell-input_icon">
-                                     <span class="input-icon_vertical"></span>
-                                     <span class="input-icon_horizontal"></span>
-                                 </div>
+                            <label for="" class="form-sell-new"> Đến</label>
+                            <div class="form-sell-wrapper">
+                                <div class="form-input_prefix">
+                                    <span >₫</span>
+                                </div>
+                                <input type="text" name="newprice" id="newprice" class="form-sell" placeholder="Nhập vào">
+                                <span class="form-message"></span>
                             </div>
-                        </label> 
+                        </div>
+                        <div class="form-items">
+                            <label for=""> Địa chỉ </label>
+                                <div class="form-sell-wrapper">
+                                    <input type="text" name="address" id="address" class="form-sell" placeholder="Nhập vào">
+                                    <span class="form-message"></span>
+                                </div>
+                                <label for="" class="form-sell-new">Thương hiệu</label>
+                                <div class="form-sell-wrapper">
+                                    <input type="text" name="brand" id="brand" class="form-sell" placeholder="Nhập vào">
+                                    <span class="form-message"></span>
+                                </div>
+                        </div>
+                        <div class="form-items">
+                            <label for="">Hình ảnh sản phẩm</label>
+                            <input type="file" name="imgs" id="input-img" accept="image/*">
+                            <label for="input-img" class="input-wrapper">
+                                <div class="sell-input_file">
+                                    <img class="img-output">
+                                    <div class="sell-input_icon">
+                                        <span class="input-icon_vertical"></span>
+                                        <span class="input-icon_horizontal"></span>
+                                    </div>
+                                </div>
+                                 </label> 
+                        </div>
+                        <div class="form-items">
+                            <button type="submit" class="btn creat-sell" id="save-sell" >Lưu</button>
+                            <button  class="btn creat-sell" id="creat-sell" >Thêm</button>
+                            <button class="btn btn_option" id="options" >Tất cả sản phẩm</button>
+                           
+                        </div>
+                </div>
+            </div>  
+            
+        </div>
+        <div class="sell-main_wrapper">
+            <div class="heading-sell">
+                <button class="btn btn-add_product">Thêm sản phẩm </button>
+                <div class="format_product"></div>
+            </div>
+            <div class="sell-main">
+               <div class="sell-main_wrap">
+                    <div class="sell-main_header">
+                        <ul class="sell-main_list">
+                            <li class="sell-main_item">Tên sản phẩm</li>
+                            <li class="sell-main_item">Giá cũ</li>
+                            <li class="sell-main_item">Giá mới</li>
+                            <li class="sell-main_item">Địa chỉ </li>
+                            <li class="sell-main_item">Thương hiệu</li>
+                            <li class="sell-main_item">Tùy chọn</li>
+                        </ul>
                     </div>
-                    <div class="form-items">
-                        <button type="submit" class="btn creat-sell" id="creat-sell" >Thêm</button>
+                    <div class="sell_product">
+                    <!-- <div class="sell-main_product">
+                        <div class="sell-main_info">
+                            <img src="./img/ip6 lock.png" alt="">
+                            <div class="info-name">
+                                <span> Điện thoại</span>
+                            </div>
+                        </div>
+                        <div class="sell-main_varition">
+                            <div class="varition-oldprice">199.999</div>
+                            <div class="varition-newprice">180.000</div>
+                            <div class="varition-address">Hà Nội</div>
+                            <div class="varition-brand">App</div>
+                        </div>
+                        <div class="sell-main_action">
+                            <button class="sell-edit">Sửa</button>
+                            <button class="sell-delete">Xóa</button>
+                        </div>
+                    </div>
+                   
+                -->
+               </div>
+            <div class="row sm-gutter product-app">
+                <div class="col l-2-4 m-3 c-5">
+                    <div class="product-items">
+                        <img src="./img/ip6 lock.png" alt="">
+                        <div class="product-name">Điện thoại</div>
+                        <div class="product-price">
+                            <div class="item-price-old">100.000 <span>đ</span></div>
+                            <div>-</div>
+                            <div class="item-price-new">200.000 <span>đ</span></div>
+                        </div>
+                        <div class="product-meta">
+                           
+                            <div class="product-address">
+                                Hà Nội
+                            </div>
+                            <div class="product-brand">Apple</div>
+                        </div>
+                        <div class="product-actions">
+                            <div class="actions-wrapper">
+                            <div class="actions-option sell-edit">
+                                <i class="fas fa-pen"></i>
+                            </div>
+                            <div class="actions-delete sell-delete">
+                                <i class="fas fa-trash"></i>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+               <div class="sell_product_details">
+                   <h2 class="sell_header">
+                       Thông tin chi tiết
+                   </h2>
+                   <div class="form-items">
+                        <label for="">Thêm hình ảnh</label>
+                       
+                        <div class="imgs-input-wrap">
+                            <label for="imgs-input-1" class="input-wrapper">
+                                <input type="file" name="imgs" id="imgs-input-1" accept="/*" multiple >
+                                <div class="sell-input_file">
+                                    <img class="images-output">
+                                    <div class="sell-input_icon">
+                                        <span class="input-icon_vertical"></span>
+                                        <span class="input-icon_horizontal"></span>
+                                    </div>
+                                </div>
+                            </label>
+                                <label for="imgs-input-2" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-2" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-3" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-3" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-4" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-4" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-5" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-5" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-6" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-6" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-7" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-7" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                                <label for="imgs-input-8" class="input-wrapper">
+                                    <input type="file" name="imgs" id="imgs-input-" accept="/*" multiple >
+                                    <div class="sell-input_file">
+                                        <img class="images-output">
+                                        <div class="sell-input_icon">
+                                            <span class="input-icon_vertical"></span>
+                                            <span class="input-icon_horizontal"></span>
+                                        </div>
+                                    </div>
+                                </label>
+                              
+                        </div>
+                        
+                   </div>
+                   <div class="form-items">
+                    <div class="product-details_colors">
+                       <label for="">Màu sắc</label>
+                       <div class="colors-wrapper">
+                                <div class="colors-input">
+                                    <input type="text" class="input-colors" placeholder="Nhập vào màu sắc">
+                                    <!-- <div class="delete-color">
+                                        <i class="fal fa-trash"></i>
+                                    </div> -->
+                                </div>
+                               
+                                <div class="add-input-colors ">
+                                   <span>Thêm màu sắc</span>
+                                    <div class="icon-add-wrapper_color">
+                                        <i class="fal fa-plus"></i>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                      
+                    </div>
+                    <div class="form-items">
+                        <div class="product-details_config">
+                           <label for="">Size</label>
+                           <div class="config-wrapper">
+                                    <div class="configs-input">
+                                        <input type="text" class="input-config" placeholder="Nhập size">
+                                        <!-- <div class="delete-size">
+                                            <i class="fal fa-trash"></i>
+                                        </div> -->
+                                    </div>
+                                       
+                                    <div class="add-input-config">
+                                       <span>Thêm size</span>
+                                        <div class="icon-add-wrapper_config">
+                                            <i class="fal fa-plus"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                           </div>
+                          
+                        </div>
+                   </div>
+               </div>
+            </div>
+            
+
             </div>
         </div>
     </div>

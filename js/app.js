@@ -560,7 +560,7 @@ function showModalCart(){
 const detailsApi = 'http://localhost:3002/product-details';
 function starts(id){
     getDetails(id,function(details){
-        renderNametype(details);
+        
         renderColor(details);
         renderConfig(details);
         renderImgs(details);
@@ -578,27 +578,7 @@ function getDetails(id, callback){
         .then(callback)
 }
 // render 
-function renderNametype(details){
-    let listNames = document.querySelectorAll('.product-status label');
-    // if(details.types.type1==undefined){
-    //     listNames[0].children[0]
-    // }
-    if(details.types.type1!= undefined){
-        let creatTypeName1 = `<label> ${details.types.type1}</label>`;
-         listNames[0].innerHTML= creatTypeName1;
-      
-    }else{
-        listNames[0].childNodes[0].remove();
-    }
-    if(details.types.type2!= undefined){
-        let creatTypeName2 = `<label> ${details.types.type2}</label>`;
-        listNames[1].innerHTML= creatTypeName2
-    }else{
-        listNames[1].childNodes[0].remove();
-    }
-    
-    
-}
+
 
 
 function renderColor(details){
@@ -654,21 +634,41 @@ function exitModal(){
 
 
 // preview img
-function previewImg(){
-    var inputElement = document.getElementById('input-img');
-    inputElement.addEventListener('change',(e)=>{
+// function previewImg(){
+//     var inputElement = document.querySelector('#input-img');
+    
+//     inputElement.addEventListener('change',(e)=>{
+//         var outputElement = document.querySelector('.img-output');
+//         outputElement.src = `./img/${e.target.files[0].name}`;
+//         outputElement.onload = function(){
+//             URL.revokeObjectURL(outputElement.src);
+            
+//         }
+//         if(outputElement.src){
+//             document.querySelector('.sell-input_icon').style.zIndex = -1;
+//             document.querySelector('.sell-input_file').style.border = 'none'
+//         }
+//     })
+// }
 
-        var outputElement = document.querySelector('.img-output');
-        outputElement.src = `./img/${e.target.files[0].name}`;
-        outputElement.onload = function(){
-            URL.revokeObjectURL(outputElement.src);
-            document.querySelector('.sell-input_icon').style.zIndex = -1;
-        }
+
+function previewImages(){
+    var inputsElement = document.querySelectorAll('input[name="imgs"]');
+
+    inputsElement.forEach(element =>{
+        element.addEventListener('change',(e)=>{
+           
+           e.target.nextElementSibling.children[0].src = `./img/${e.target.files[0].name}`;
+           e.target.nextElementSibling.children[0].onload = function(){
+            URL.revokeObjectURL( e.target.nextElementSibling.children[0].src);
+
+            e.target.nextElementSibling.children[1].style.zIndex = -1 ;
+            e.target.nextElementSibling.style.border = 'none';
+           }
+        })
     })
 }
-previewImg();
-
-
+previewImages()
 // fetch api - add cart
 var productApi = 'http://localhost:3002/products';
 function start(){
@@ -686,10 +686,95 @@ function creatProducts(data, callback){
     })
         .then(response =>response.json())
         .then(callback)
+        .catch(err => {
+            console.log("lỗi")
+        })
+}
+
+
+function handleDeleteProduct(id ,event){
+    event.stopPropagation();
+    fetch(productApi + '/' + id,{
+        method: 'Delete',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+       
+    })
+        .then(response =>response.json())
+        .then(function(){
+            var productItem =  document.querySelector('.product-item-' +id);
+            if(productItem){
+                productItem.remove();
+            }
+        })
+        
+}
+function handleEditProduct(id, event){
+    
+    event.stopPropagation();
+    var productItem = document.querySelector('.product-item-' +id)
+
+    //move
+    var mainElement = document.querySelector('.body-sell-wrapper');
+    mainElement.style.transform ='translateX('+ 0 +'px)';
+    mainElement.style.transition ='all 500ms ease 0s';
+    document.querySelector('#creat-sell').style.display ='none';
+    document.querySelector('#save-sell').style.display = 'block';
+    var imgSrc = document.querySelector('.img-output').src
+    //img
+    imgSrc = productItem.children[0].children[0].src;
+    part = imgSrc.indexOf('img');
+    imgElement = imgSrc.slice(part);
+    document.querySelector('.img-output').src = imgElement;
+
+    document.querySelector('.btn_option').innerHTML = "Hủy";
+    document.querySelector('input[name="name"]').value = productItem.children[0].children[1].children[0].innerHTML;
+    document.querySelector('input[name="oldprice"]').value = productItem.children[1].children[0].innerHTML;
+    document.querySelector('input[name="newprice"]').value = productItem.children[1].children[1].innerHTML; 
+    document.querySelector('input[name="address"]').value =  productItem.children[1].children[2].innerHTML;
+    document.querySelector('input[name="brand"]').value = productItem.children[1].children[3].innerHTML;
+    
+    
+    document.getElementById('save-sell').addEventListener('click',()=>{
+        var formData = {
+            name: document.querySelector('input[name="name"]').value,
+            oldprice: document.querySelector('input[name="oldprice"]').value,
+            newprice:  document.querySelector('input[name="newprice"]').value,
+            address: document.querySelector('input[name="address"]').value,
+            brand: document.querySelector('input[name="brand"]').value,
+            img: document.querySelector('.img-output').src 
+        };
+    
+    editProduct(formData, id ,function(){
+        getProducts(renderProducts);
+    });
+    })
+     
+
+}
+
+function editProduct(data, id){
+    var options = {
+        method: 'PUT', // Method itself
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+        },
+        body: JSON.stringify(data) // We send data in JSON format
+    }
+    fetch(productApi + '/' +id,options)
+    .then(function(response) {
+        response.json();
+    })
+    .then(function(){
+        document.querySelector('#creat-sell').style.display ='block';
+        document.querySelector('#save-sell').style.display = 'none';
+        document.querySelector('.btn_option').innerHTML = "Tất cả sản phẩm";
+    })
 }
 
 function handleCreatProduct(){
-    var creatBtn = document.querySelector('#creat-sell');
+    var creatBtn = document.getElementById('creat-sell');
     creatBtn.addEventListener('click',(e)=>{
         e.preventDefault(); 
         var name = document.querySelector('input[name="name"]').value;
@@ -706,7 +791,7 @@ function handleCreatProduct(){
             newprice: newprice,
             address: address,
             brand: brand,
-            img: "img/" + img
+            img: "./img/" + img
         }
         creatProducts(formData,function(){
             getProducts(renderProducts);
@@ -720,10 +805,12 @@ function getProducts(callback){
         .then(function(response){
             return response.json();
         })
-        .then(callback);
+        .then(callback)
+        .catch(err => console.log(err))
 }
 function renderProducts(products){
     var listProduct = document.querySelector('.product-main');
+    var listSell = document.querySelector('.sell_product');
     var htmls = products.map(function(product){
        return `
         <div class="col l-2-4 m-4 c-6">
@@ -775,6 +862,28 @@ function renderProducts(products){
         `;
     }
         );
+    var sell = products.map(function(product){
+        return `
+        <div class="sell-main_product product-item-${product.id}">
+            <div class="sell-main_info">
+                <img src="${product.img}" alt="">
+                <div class="info-name">
+                     <span>${product.name}</span>
+                </div>
+            </div>
+            <div class="sell-main_varition">
+                <div class="varition-oldprice">${product.oldprice}</div>
+                <div class="varition-newprice">${product.newprice}</div>
+                <div class="varition-address">${product.address}</div>
+                <div class="varition-brand">${product.brand}</div>
+            </div>
+            <div class="sell-main_action">
+                <button class="sell-edit" onclick="handleEditProduct(${product.id},event)">Sửa</button>
+                <button class="sell-delete" onclick="handleDeleteProduct(${product.id},event)">Xóa</button>
+            </div>
+    </div>`
+    })
+    listSell.innerHTML = sell.join('');
     listProduct.innerHTML = htmls.join('');
     rateHearts();
     addClassPrice();

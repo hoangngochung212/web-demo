@@ -381,6 +381,121 @@ Validator({
 })
 
 
+
+// modal--sell
+
+function showModalSell(){
+    var showSell = document.querySelectorAll('.header__navbar-item--set')[0];
+    var overlay = document.querySelectorAll('.modal__overlay')[1];
+    var exitSell = document.querySelector('.exit-sell');
+    
+    showSell.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'flex';
+    })
+    exitSell.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'none';
+    })
+    overlay.addEventListener('click',()=>{
+        document.querySelector('.modal-sell').style.display = 'none';
+    })
+}
+showModalSell();
+
+function MoveListProduct(){
+    var moveElement = document.querySelector('.btn_option');
+    var mainElement = document.querySelector('.body-sell-wrapper');
+    var size = mainElement.clientWidth;
+    
+    moveElement.addEventListener('click',()=>{
+        mainElement.style.transform ='translateX('+ -size +'px)';
+        mainElement.style.transition ='all 500ms ease 0s';
+    })
+
+    var back = document.querySelector('.btn-add_product');
+    back.addEventListener('click',()=>{
+        mainElement.style.transform ='translateX('+ 0 +'px)';
+        mainElement.style.transition ='all 500ms ease 0s';
+        moveElement.innerHTML = 'Tất cả sản phẩm';
+        document.getElementById('creat-sell').style.display = 'block';
+        document.querySelector('#save-sell').style.display = 'none';
+        document.querySelector('input[name="name"]').value='';
+        document.querySelector('input[name="oldprice"]').value;
+        document.querySelector('input[name="newprice"]').value;
+        document.querySelector('input[name="address"]').value ;
+        document.querySelector('input[name="brand"]').value ;
+        document.querySelector('.img-output').src='';
+    })
+}
+MoveListProduct();
+
+// add input
+
+function addInputColors(){
+    var addInputElement = document.querySelector('.add-input-colors');
+    var parent = document.querySelector('.colors-wrapper');
+    addInputElement.addEventListener('click',()=>{
+        var input = document.createElement('div');
+        input.classList.add('colors-input');
+        
+        var deleteElement = document.createElement('div');
+        deleteElement.classList.add('delete-color');
+        var iconDelete = document.createElement('i');
+        iconDelete.classList.add('fal','fa-trash');
+        deleteElement.appendChild(iconDelete);
+       
+        input.appendChild(deleteElement)
+      
+        var inputElement = document.createElement('input');
+        inputElement.type = "text";
+        inputElement.className ="input-colors";
+        inputElement.placeholder ="Nhập vào màu sắc"
+        input.insertBefore(inputElement,input.children[0]);
+        parent.insertBefore(input ,parent.children[1])
+       
+    var deleteElement = document.querySelector('.delete-color');
+   
+    deleteElement.addEventListener('click',(e)=>{
+        e.target.parentElement.remove();
+    })
+
+
+    })
+}
+addInputColors();
+
+function addInputConfigs(){
+    var addInputElement = document.querySelector('.add-input-config');
+    var parent = document.querySelector('.config-wrapper');
+    addInputElement.addEventListener('click',()=>{
+        var input = document.createElement('div');
+        input.classList.add('configs-input');
+        
+        var deleteElement = document.createElement('div');
+        deleteElement.classList.add('delete-configs');
+        var iconDelete = document.createElement('i');
+        iconDelete.classList.add('fal','fa-trash');
+        deleteElement.appendChild(iconDelete);
+       
+        input.appendChild(deleteElement)
+        
+        var inputElement = document.createElement('input');
+        inputElement.type = "text";
+        inputElement.className ="input-config";
+        inputElement.placeholder ="Nhập size"
+        input.insertBefore(inputElement,input.children[0]);
+        console.log(parent)
+        parent.insertBefore(input ,parent.children[1])
+       
+    var deleteElement = document.querySelector('.delete-configs');
+   
+    deleteElement.addEventListener('click',(e)=>{
+        e.target.parentElement.remove();
+    })
+
+
+    })
+}
+addInputConfigs();
 //* filter 
 // btnSort[0].addEventListener('click',(btn)=>{
 //     btn.preventDefault();
@@ -428,27 +543,9 @@ function openNavMobile()
 }
 openNavMobile();
 
-function priceSortMoble(){
+function priceSortMobile(){
     var priceMobile = document.querySelector('select-with-status_label');
     
 }
-priceSortMoble()
+priceSortMobile()
 
-// modal--sell
-
-function showModalSell(){
-    var showSell = document.querySelectorAll('.header__navbar-item--set')[0];
-    var overlay = document.querySelectorAll('.modal__overlay')[1];
-    var exitSell = document.querySelector('.exit-sell');
-    
-    showSell.addEventListener('click',()=>{
-        document.querySelector('.modal-sell').style.display = 'flex';
-    })
-    exitSell.addEventListener('click',()=>{
-        document.querySelector('.modal-sell').style.display = 'none';
-    })
-    overlay.addEventListener('click',()=>{
-        document.querySelector('.modal-sell').style.display = 'none';
-    })
-}
-showModalSell();

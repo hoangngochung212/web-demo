@@ -1273,7 +1273,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-   
+    display: flex;
 }
 .price{
     white-space: nowrap;
@@ -1290,7 +1290,7 @@
     margin-right: 5px;
 }
 .price:last-child{
-    margin-left: -4px;
+    margin-left: 2px;
   
 }
 .unit:first-child {

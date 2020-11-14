@@ -1,67 +1,22 @@
 {
   "products": [
     {
-      "img": "./img/n2.jfif",
-      "name": "Ốp Điện thoại iPhone 8 Plus Quốc tế siêu cute",
-      "oldprice": "120.000",
-      "newprice": "89.000",
-      "brand": "no brand",
+      "name": "SIM VD89 , VD149 12T-720GB đến 1440GB ( Miễn Phí Data ) và Gọi Miễn Phí -Sản phẩm Từ 6 đến 12 Tháng",
+      "oldprice": "689.000",
+      "newprice": "579.000",
       "address": "Nam Định",
+      "brand": "Vinaphone",
+      "img": "http://127.0.0.1:5500/img/simvina4g.jfif",
       "id": 1
-    },
-    {
-      "img": "./img/ip7plus.jpg",
-      "name": "Điện thoại iPhone 7 Plus Quốc tế",
-      "oldprice": "8.900.000",
-      "newprice": "8.600.000",
-      "brand": "Apple",
-      "address": "Hà Nội",
-      "id": 2
-    },
-    {
-      "img": "./img/huawei.png",
-      "name": "Điện thoại Huawei p30",
-      "oldprice": "5.590.000",
-      "newprice": "5.390.000 ",
-      "brand": "Huawei",
-      "address": "Hà Nội",
-      "id": 3
-    },
-    {
-      "img": "./img/airpod_1.jfif",
-      "name": "[Hàng Mới Về] Tai Nghe Bluetooth Airpods Pro TWS - Có đổi tên, sack Không dây - BH 1 đổi 1",
-      "oldprice": "850.000",
-      "newprice": "450.000",
-      "brand": "Apple",
-      "address": "Hà Nội",
-      "id": 5
-    },
-    {
-      "id": 4,
-      "img": "./img/ipad2019.jfif",
-      "name": "Ipad 2019 - Hàng chính hãng",
-      "brand": "Oppo",
-      "address": "Hải Phòng",
-      "oldprice": "9.990.000",
-      "newprice": "9.068.000"
-    },
-    {
-      "img": "./img/opkinh.jfif",
-      "name": "Kính cường lực Full Màn 21D cho 5/5s/6/6plus/6s/6s plus/6/7/7plus/8/8plus/x/xs/xs max/11/11 pro/11 promax - Shin case",
-      "brand": "No brand",
-      "address": "Hà Nội",
-      "oldprice": "32.000",
-      "newprice": "12.000",
-      "id": 6
     },
     {
       "name": "SIM VD89 , VD149 12T-720GB đến 1440GB ( Miễn Phí Data ) và Gọi Miễn Phí -Sản phẩm Từ 6 đến 12 Tháng",
       "oldprice": "689.000",
       "newprice": "579.000",
-      "address": "Hà Nội",
+      "address": "Nam Định",
       "brand": "Vinaphone",
-      "img": "img/_ss-galaxy-s10-xanh-1.png",
-      "id": 7
+      "img": "./img/simvina4g.jfif",
+      "id": 2
     }
   ],
   "product-details": [
@@ -135,10 +90,8 @@
           "img": "./img/ip7s_2.jfif"
         }
       ],
-      "types": {
-        "type1": "Màu sắc",
-        "type2": "Cấu hình"
-      },
+     
+      
       "colors": [
         {
           "color": "Đen"
