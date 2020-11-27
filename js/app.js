@@ -141,8 +141,8 @@ function countProduct(){
 
 // add to cart 
 function addcart(){
-    const items = {};
-    const addCart = document.querySelector('.add-cart');
+    var items = {};
+    var addCart = document.querySelector('.add-cart');
     addCart.addEventListener('click',(element) =>{
 
         if(element.target.classList.contains('category-selected') )
@@ -173,21 +173,21 @@ function addcart(){
          
            else {  
                 
-                let imgSrcs = element.target.parentElement.parentElement.parentElement.parentElement.previousElementSibling.children[0].children[0].children[0].src;
-                let pos = imgSrcs.indexOf('img') + 3;
-                let partPath = imgSrcs.slice(pos);
+                var imgSrcs = element.target.parentElement.parentElement.parentElement.parentElement.previousElementSibling.children[0].children[0].children[0].src;
+                var pos = imgSrcs.indexOf('img') + 3;
+                var partPath = imgSrcs.slice(pos);
                 items.img = `img${partPath}`;
-                let name = element.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
+                var name = element.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerText;
                 
                 items.name = name;
-                let price = element.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.children[0].children[0].children[1].innerText;
+                var price = element.target.parentElement.parentElement.parentElement.previousElementSibling.previousElementSibling.children[0].children[0].children[1].innerText;
 
                 items.price = price;
                 
-                let inputValue = element.target.parentElement.parentElement.parentElement.previousElementSibling.children[2].children[2].children[1].children[0].children[0].children[1].value;
+                var inputValue = element.target.parentElement.parentElement.parentElement.previousElementSibling.children[2].children[2].children[1].children[0].children[0].children[1].value;
                 items.amount = inputValue;     
                 
-                const cartItems = document.createElement('li'); 
+                var cartItems = document.createElement('li'); 
                 cartItems.classList.add('header__cart-items');
                 cartItems.innerHTML =`
                       <a href="#" class="header__cart-items-link">
@@ -213,17 +213,17 @@ function addcart(){
             </a>
             ` ;
            
-            const cart = document.querySelector('.header__cart-list-item');
+            var cart = document.querySelector('.header__cart-list-item');
                 cart.insertBefore(cartItems,cart.children[0]);
                 alert("Sản phẩm đã được thêm vào giỏ hàng");
                 if(items.classify2 ===undefined){
                     var classify2 = document.querySelector('.header__cart-items-descrip span');
                     classify2.remove();
                 };
-  // delete
+  // devare
             if(cart.insertBefore(cartItems,cart.children[0])){
-                var deleteCart = document.querySelectorAll('.header__cart-items-remove');
-                deleteCart.forEach(function(del) {
+                var devareCart = document.querySelectorAll('.header__cart-items-remove');
+                devareCart.forEach(function(del) {
                     del.addEventListener('click',(e)=>{
                        e.target.parentElement.parentElement.parentElement.remove();
                          showCart();
@@ -242,7 +242,7 @@ function addcart(){
 
 // limit cart
 function limitCart(){
-    const cartLength = document.querySelectorAll('.header__cart-items-link').length;
+    var cartLength = document.querySelectorAll('.header__cart-items-link').length;
     if(cartLength ===0){
         document.querySelector('.has_cart').style.display = 'none';
         document.querySelector('.no_cart').style.display='block';
@@ -256,13 +256,13 @@ function limitCart(){
 // số lượng sp
 function showCart() {
 
-    const show = [];
-    const items = document.querySelectorAll('.header__cart-items-amount');
+    var show = [];
+    var items = document.querySelectorAll('.header__cart-items-amount');
     items.forEach(item => {
         show.push(parseFloat(item.textContent));
         
     })
-    const totalShow = show.reduce((total,item) =>{
+    var totalShow = show.reduce((total,item) =>{
         total += item;
         return total;
     },0)
@@ -289,16 +289,15 @@ addClass.forEach(value =>{
 function sortCart(dir){
     var cart = document.querySelector('.home-product').children[0];
     var product = cart.querySelectorAll('.col');
-   
+  
     var arr = Array.from(product).map(element => ({
         element :element,
-        price : parseFloat(element.querySelector('.price-new').textContent.replace('.','').replace('.','').trim())
+        price : parseFloat(element.querySelector('.price-new').textContent.replace('₫','').replaceAll('.',''))
     }));
-    
-    var sorted = arr.sort((a,b)=>(a.price - b.price) *dir);
    
+    var sorted = arr.sort((a,b)=>(a.price - b.price) *dir);
+  
     sorted.forEach(value =>{
-         
           cart.appendChild(value.element);
     });
 }
@@ -335,33 +334,44 @@ heartItems.forEach(function(e){
 }
 // modal (fetch api)
 function showModalCart(){
+    var items = {};
+
+   
     
-    const cartItems = document.querySelectorAll('.home-product_item');
+    var cartItems = document.querySelectorAll('.home-product_item');
     cartItems.forEach(element =>{
         element.addEventListener('click',(e)=>{
             e.preventDefault();
-            const items = {};
-            
-            let imgSrcs = element.children[0].children[0].src;
-            let pos = imgSrcs.indexOf('img') +3;
-            let partPath = imgSrcs.slice(pos);
+           
+            var images = element.querySelectorAll('.home-product-images');
+            console.log(images)
+            items.image1 = `.${images[0].src.slice(21)}`;
+            items.image2 =  `.${images[1].src.slice(21)}`;
+            items.image3 =  `.${images[2].src.slice(21)}`;
+            items.image4 =  `.${images[3].src.slice(21)}`;
+            items.image5 =  `.${images[4].src.slice(21)}`;
+            items.image6 =  `.${images[5].src.slice(21)}`;
+            items.image7 =  `.${images[6].src.slice(21)}`;
+            var imgSrcs = element.children[0].children[0].src;
+            var pos = imgSrcs.indexOf('img') +3;
+            var partPath = imgSrcs.slice(pos);
             
             items.img = `./img${partPath}`;
-            let name = element.children[1].children[0].innerText;
+            var name = element.children[1].children[0].innerText;
             items.name = name;
-            let priceOld = element.children[1].children[1].children[0].innerText;
-            let priceNew = element.children[1].children[1].children[2].innerText;
+            var priceOld = element.children[1].children[1].children[0].innerText;
+            var priceNew = element.children[1].children[1].children[2].innerText;
             items.priceNew = priceNew;
             items.priceOld = priceOld ;
             
             if(items.priceOld ===undefined){
                 document.querySelector('.price-item-old span').remove();
             }
-            
-            
-            const cartDetailS =document.createElement('div');
+           
+            var cartDetailS =document.createElement('div');
             cartDetailS.classList.add('modal-product');
             cartDetailS.innerHTML = ` <div class="modal__overlay">
+
             </div>
             <div class="modal__body">
                 <div class="product-cart">
@@ -375,13 +385,15 @@ function showModalCart(){
                                 </div>
                                 <div class="img_show-click">
                                     <div class="carousel-img">
-                                        <div class="item"><img src="img/1cca5ecdf07696e7e4fe5e619683e078.jfif" alt=""></div>
-                                        <div class="item"><img src="img/1cca5ecdf07696e7e4fe5e619683e078.jfif" alt=""></div>
-                                        <div class="item"><img src="img/showcart2.jfif" alt=""></div>
-                                        <div class="item"> <img src="img/show3.jfif" alt=""></div>
-                                        <div class="item"> <img src="img/show4.jfif" alt=""></div>
-                                        <div class="item"> <img src="img/show5.jfif" alt=""></div>
-                                        <div class="item"> <img src="img/show5.jfif" alt=""></div>
+                                    <div class="item"> <img src="${items.img}" alt=""></div>
+                                        <div class="item"><img src="${items.image1}" alt=""></div>
+                                        <div class="item"><img src="${items.image2}" alt=""></div>
+                                        <div class="item"><img src="${items.image3}" alt=""></div>
+                                        <div class="item"><img src="${items.image4}" alt=""></div>
+                                        <div class="item"><img src="${items.image5}" alt=""></div>
+                                        <div class="item"><img src="${items.image6}" alt=""></div>
+                                        <div class="item"><img src="${items.image7}" alt=""></div>
+                                       
                                     </div>
     
                                     <button class="prev"><i class="fas fa-chevron-left"></i></button>
@@ -481,21 +493,70 @@ function showModalCart(){
                         <div class="product-info-details">
                         <div class="product-status-wp">
                             <div class="product-status">
-                                <label for="">tình trạng</label>
+                                <label for="">màu sắc</label>
                                 <div class="status-info">
-                                <button class="status-category">64gb quốc tế
+                                <button class="status-category">Đỏ
                                     <div class="">
                                         <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
                                     </div>
                                 </button>
+                                <button class="status-category">Đen
+                                    <div class="">
+                                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                    </div>
+                                </button>
+                                <button class="status-category">Trắng
+                                    <div class="">
+                                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                    </div>
+                                </button>
+                                <button class="status-category">Xanh lá
+                                <div class="">
+                                    <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                </div>
+                            </button>
+                            <button class="status-category">Vàng
+                                <div class="">
+                                    <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                </div>
+                            </button>
+                            <button class="status-category">Tím
+                            <div class="">
+                                <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                            </div>
+                        </button>
+                        <button class="status-category">Xám
+                        <div class="">
+                            <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                        </div>
+                    </button>
+                    <button class="status-category">Xanh nước biển
+                    <div class="">
+                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                    </div>
+                </button>
                                 </div>
                             </div>
                         </div>
                             <div class="product-status-wp">
                                 <div class="product-status">
-                                    <label for="">màu sắc</label>
+                                    <label for="">Size</label>
                                     <div class="status-info">
-                                       
+                                    <button class="status-variation">M (45 - 60Kg)
+                                    <div class="">
+                                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                    </div>
+                                </button>
+                                <button class="status-variation">L (58 - 72 Kg)
+                                    <div class="">
+                                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                    </div>
+                                </button>
+                                <button class="status-variation">XL (68 - 82Kg)
+                                <div class="">
+                                    <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+                                </div>
+                            </button>
                                     </div>
                                 </div>
                             </div>
@@ -541,15 +602,16 @@ function showModalCart(){
             </div>
         </div>`;
             
-            const bodyElement = document.getElementsByTagName('body')[0];
+            var bodyElement = document.getElementsByTagName('body')[0];
             bodyElement.insertBefore(cartDetailS,bodyElement.children[0])
             // test();
             exitModal();
             rateHeart();
             countProduct();
             statusCart();
-            
             addcart();
+            showImg();
+            carouselImg();
            
     });
         })
@@ -557,66 +619,66 @@ function showModalCart(){
 }
 
 
-const detailsApi = 'http://localhost:3002/product-details';
-function starts(id){
-    getDetails(id,function(details){
+// var detailsApi = 'http://localhost:3002/product-details';
+// function starts(id){
+//     getDetails(id,function(details){
         
-        renderColor(details);
-        renderConfig(details);
-        renderImgs(details);
-        statusCart();
-        carouselImg();
-        showImg();
+//         renderColor(details);
+//         renderConfig(details);
+//         renderImgs(details);
+//         statusCart();
+//         carouselImg();
+//         showImg();
         
-    });
+//     });
     
-}
+// }
 
-function getDetails(id, callback){
-    fetch(detailsApi + "/" + id)
-        .then(response => response.json())
-        .then(callback)
-}
-// render 
+// function getDetails(id, callback){
+//     fetch(detailsApi + "/" + id)
+//         .then(response => response.json())
+//         .then(callback)
+// }
+// // render 
 
 
 
-function renderColor(details){
-   var listStt = document.querySelectorAll('.status-info');
+// function renderColor(details){
+//    var listStt = document.querySelectorAll('.status-info');
    
-    let createColors = details.colors.map(color =>{
-        return `<button class="status-category">${color.color}
-        <div class="">
-            <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
-        </div>
-    </button>`;
+//     var createColors = details.colors.map(color =>{
+//         return `<button class="status-category">${color.color}
+//         <div class="">
+//             <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+//         </div>
+//     </button>`;
     
-    });
-    listStt[0].innerHTML = createColors.join('');
-}
+//     });
+//     listStt[0].innerHTML = createColors.join('');
+// }
 
-function renderConfig(details){
-    var listStt = document.querySelectorAll('.status-info');
-    let createConfigs = details.configs.map(config =>{
-        return `
-             <button class="status-variation">${config.config}
-                 <div class="">
-                     <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
-                </div>
-            </button>`;
-    })
-    listStt[1].innerHTML = createConfigs.join('')
-}
-function renderImgs(details){
-     let listImg = document.querySelector('.carousel-img');
+// function renderConfig(details){
+//     var listStt = document.querySelectorAll('.status-info');
+//     var createConfigs = details.configs.map(config =>{
+//         return `
+//              <button class="status-variation">${config.config}
+//                  <div class="">
+//                      <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="icon-tick-bold"><g><path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path></g></svg>
+//                 </div>
+//             </button>`;
+//     })
+//     listStt[1].innerHTML = createConfigs.join('')
+// }
+// function renderImgs(details){
+//      var listImg = document.querySelector('.carousel-img');
     
-     let CreatListImgs = details.imgs.map(img =>{
-         return `
-             <div class="item"><img src="${img.img}" alt=""></div>
-         `
-     })
-     listImg.innerHTML = CreatListImgs.join('');
-}
+//      var CreatListImgs = details.imgs.map(img =>{
+//          return `
+//              <div class="item"><img src="${img.img}" alt=""></div>
+//          `
+//      })
+//      listImg.innerHTML = CreatListImgs.join('');
+// }
 //exit
 function exitModal(){
     var exitElemnt = document.querySelector('.product-exit');
@@ -632,24 +694,6 @@ function exitModal(){
     })
 }
 
-
-// preview img
-// function previewImg(){
-//     var inputElement = document.querySelector('#input-img');
-    
-//     inputElement.addEventListener('change',(e)=>{
-//         var outputElement = document.querySelector('.img-output');
-//         outputElement.src = `./img/${e.target.files[0].name}`;
-//         outputElement.onload = function(){
-//             URL.revokeObjectURL(outputElement.src);
-            
-//         }
-//         if(outputElement.src){
-//             document.querySelector('.sell-input_icon').style.zIndex = -1;
-//             document.querySelector('.sell-input_file').style.border = 'none'
-//         }
-//     })
-// }
 
 
 function previewImages(){
@@ -672,7 +716,10 @@ previewImages()
 // fetch api - add cart
 var productApi = 'http://localhost:3002/products';
 function start(){
-    getProducts(renderProducts);
+    getProducts(products =>{
+        renderProducts(products);
+     
+    });
     handleCreatProduct();
 }
 start();
@@ -713,37 +760,75 @@ function handleDeleteProduct(id ,event){
 function handleEditProduct(id, event){
     
     event.stopPropagation();
-    var productItem = document.querySelector('.product-item-' +id)
-
+    var productItem = document.querySelector('.product-item-' +id);
+    console.log(productItem.children[0])
     //move
     var mainElement = document.querySelector('.body-sell-wrapper');
     mainElement.style.transform ='translateX('+ 0 +'px)';
     mainElement.style.transition ='all 500ms ease 0s';
     document.querySelector('#creat-sell').style.display ='none';
     document.querySelector('#save-sell').style.display = 'block';
-    var imgSrc = document.querySelector('.img-output').src
+    var imgSrc = document.querySelectorAll('.img-output')[0].src;
     //img
     imgSrc = productItem.children[0].children[0].src;
     part = imgSrc.indexOf('img');
     imgElement = imgSrc.slice(part);
-    document.querySelector('.img-output').src = imgElement;
 
+    
+    var images = productItem.querySelectorAll('.sell-product-images')
+    document.querySelectorAll('.img-output')[1].src = "." + productItem.children[0].children[1].src.slice(21);
+    document.querySelectorAll('.img-output')[2].src = "." + productItem.children[0].children[2].src.slice(21);
+    document.querySelectorAll('.img-output')[3].src = "." + productItem.children[0].children[3].src.slice(21);
+    document.querySelectorAll('.img-output')[4].src = "." + productItem.children[0].children[4].src.slice(21);
+    document.querySelectorAll('.img-output')[5].src = "." + productItem.children[0].children[5].src.slice(21);
+    document.querySelectorAll('.img-output')[6].src = "." + productItem.children[0].children[6].src.slice(21);
+    document.querySelectorAll('.img-output')[7].src = "." + productItem.children[0].children[7].src.slice(21);
+    
+
+    document.querySelectorAll('.img-output')[0].src = imgElement;
     document.querySelector('.btn_option').innerHTML = "Hủy";
-    document.querySelector('input[name="name"]').value = productItem.children[0].children[1].children[0].innerHTML;
-    document.querySelector('input[name="oldprice"]').value = productItem.children[1].children[0].innerHTML;
-    document.querySelector('input[name="newprice"]').value = productItem.children[1].children[1].innerHTML; 
-    document.querySelector('input[name="address"]').value =  productItem.children[1].children[2].innerHTML;
-    document.querySelector('input[name="brand"]').value = productItem.children[1].children[3].innerHTML;
+    
+    document.querySelector('input[name="name"]').value = productItem.children[0].children[9].children[0].innerHTML;
+    document.querySelector('input[name="oldprice"]').value = productItem.children[1].innerHTML;
+    document.querySelector('input[name="address"]').value =  productItem.children[2].innerHTML;
+    document.querySelector('input[name="brand"]').value = productItem.children[3].innerHTML;
+    
     
     
     document.getElementById('save-sell').addEventListener('click',()=>{
         var formData = {
+            dataset: document.getElementById('select-category').value,
             name: document.querySelector('input[name="name"]').value,
             oldprice: document.querySelector('input[name="oldprice"]').value,
-            newprice:  document.querySelector('input[name="newprice"]').value,
             address: document.querySelector('input[name="address"]').value,
             brand: document.querySelector('input[name="brand"]').value,
-            img: document.querySelector('.img-output').src 
+            img: "." + document.querySelectorAll('.img-output')[0].src.slice(21) ,
+            imgs: [
+                {
+                  img: "." + document.querySelectorAll('.img-output')[1].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[2].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[3].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[4].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[5].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[6].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[7].src.slice(21)
+                },
+                {
+                  img: "." + document.querySelectorAll('.img-output')[8].src.slice(21)
+                }
+              ]
         };
     
     editProduct(formData, id ,function(){
@@ -777,21 +862,54 @@ function handleCreatProduct(){
     var creatBtn = document.getElementById('creat-sell');
     creatBtn.addEventListener('click',(e)=>{
         e.preventDefault(); 
-        var name = document.querySelector('input[name="name"]').value;
-        var oldprice = document.querySelector('input[name="oldprice"]').value;
-        var newprice = document.querySelector('input[name="newprice"]').value;
+        
+        var dataset = document.getElementById('select-category').value;
+        var name = document.querySelector('input[name="name"]').value; 
         var address = document.querySelector('input[name="address"]').value;
         var brand = document.querySelector('input[name="brand"]').value;
-        var img = document.querySelector('input[name="img"]').files[0].name;
-        
-     
+        var oldprice = document.querySelector('input[name="oldprice"]').value;
+        var img = document.querySelector('input[id="input-img"]').files[0].name;
+        var image1 = document.querySelector('input[id="input-img-1"]').files[0].name;
+        var image2 = document.querySelector('input[id="input-img-2"]').files[0].name;
+        var image3 = document.querySelector('input[id="input-img-3"]').files[0].name;
+        var image4 = document.querySelector('input[id="input-img-4"]').files[0].name;
+        var image5 = document.querySelector('input[id="input-img-5"]').files[0].name;
+        var image6 = document.querySelector('input[id="input-img-6"]').files[0].name;
+        var image7 = document.querySelector('input[id="input-img-7"]').files[0].name;
+        var image8 = document.querySelector('input[id="input-img-8"]').files[0].name;
         var formData = {
+            dataset:dataset,
             name: name,
             oldprice: oldprice,
-            newprice: newprice,
             address: address,
             brand: brand,
-            img: "./img/" + img
+            img: "./img/" + img,
+            imgs: [
+                {
+                  img: "./img/" + image1
+                },
+                {
+                  img: "./img/" + image2
+                },
+                {
+                  img: "./img/" + image3
+                },
+                {
+                  img: "./img/" + image4
+                },
+                {
+                  img: "./img/" + image5
+                },
+                {
+                  img: "./img/" + image6
+                },
+                {
+                  img: "./img/" + image7
+                },
+                {
+                  img: "./img/" + image8
+                }
+              ]
         }
         creatProducts(formData,function(){
             getProducts(renderProducts);
@@ -812,12 +930,26 @@ function renderProducts(products){
     var listProduct = document.querySelector('.product-main');
     var listSell = document.querySelector('.sell_product');
     var htmls = products.map(function(product){
+       
+        var formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'VND',
+          });
+        var newPrice = ((parseInt(product.oldprice) - (parseInt(product.oldprice) / 100 * 10 ))) ;
+        
        return `
         <div class="col l-2-4 m-4 c-6">
-        <div onclick="starts(${product.id})" class="home-product_item">
+        <div class="home-product_item">
             <div class="home-product_img">
                 <img src="${product.img}" alt="" class="home-product-item_img">
-             
+                <img src="${product.imgs[0].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[1].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[2].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[3].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[4].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[5].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[6].img}" alt="" class="home-product-images">
+                <img src="${product.imgs[7].img}" alt="" class="home-product-images">
                 <div class="home-product_favourite">
                     <span class="home-product_favourite-name">Yêu thích</span>
                 </div>
@@ -833,9 +965,9 @@ function renderProducts(products){
                     </h4>
                 </div>
                 <div class="home-product_price">
-                    <span class="price old-price">₫${product.oldprice}</span>
-                    <span class="unit">₫</span>
-                    <span class="price">${product.newprice}</span>
+                    <span class="price old-price">${formatter.format(product.oldprice).replaceAll(',','.')}</span>
+                    <span class="unit"></span>
+                    <span class="price">${formatter.format(newPrice).replaceAll(',','.')}</span>
                 </div>
                 <div class="home-product_action">
                     <div class="home-product_action-like home-product_action-liked">
@@ -863,20 +995,27 @@ function renderProducts(products){
     }
         );
     var sell = products.map(function(product){
+     
         return `
         <div class="sell-main_product product-item-${product.id}">
             <div class="sell-main_info">
                 <img src="${product.img}" alt="">
+                <img src="${product.imgs[0].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[1].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[2].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[3].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[4].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[5].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[6].img}" alt="" class="sell-product-images">
+                <img src="${product.imgs[7].img}" alt="" class="sell-product-images">
                 <div class="info-name">
                      <span>${product.name}</span>
                 </div>
             </div>
-            <div class="sell-main_varition">
-                <div class="varition-oldprice">${product.oldprice}</div>
-                <div class="varition-newprice">${product.newprice}</div>
-                <div class="varition-address">${product.address}</div>
-                <div class="varition-brand">${product.brand}</div>
-            </div>
+            <div class="varition-oldprice">${product.oldprice}</div>
+            <div class="varition-address">${product.address}</div>
+            <div class="varition-brand">${product.brand}</div>
+            
             <div class="sell-main_action">
                 <button class="sell-edit" onclick="handleEditProduct(${product.id},event)">Sửa</button>
                 <button class="sell-delete" onclick="handleDeleteProduct(${product.id},event)">Xóa</button>
@@ -887,7 +1026,7 @@ function renderProducts(products){
     listProduct.innerHTML = htmls.join('');
     rateHearts();
     addClassPrice();
-    runSortCart();
     showModalCart();
-    
+    runSortCart();
 }
+

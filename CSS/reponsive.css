@@ -1,5 +1,6 @@
 /* Moble % tablet */
 @media (max-width:1023px) {
+
     .hide-on-mobile-tablet{
         display: none !important;
     }
@@ -163,15 +164,16 @@
        background-color: #f5f5f5;
         padding: 12px 0px;
       
-        
     }
     .home-sort-option{
+        margin-top: -40px;
         width: 100%;
         display: flex;
         justify-content: space-between;
-
+        z-index: 1;
     }
     .home-sort-bar_btn,.select-with-status{
+        position: relative;
         min-width: 25% !important;
         display: block !important;
         background-color: var(--white-color) !important;
@@ -183,12 +185,25 @@
         margin-right: 0;
         padding: unset;
         font-size: 12px;
-
+    }
+    .home-sort-bar_btn::after{
+        content: '';
+        position: absolute;
+        display: block ;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1px;
+        height: 12px;
+        background-color: #e5e5e5;
+        
     }
     .btn--primary{
-        color: var(--white-color) !important;
-         background-color: var(--primary-color) !important;
+        color: var(--primary-color)  !important;
+        background-color: #fff !important;
         font-size: 12px !important;
+        border-bottom: solid 2px red !important;
+        border-radius: unset !important;
     }
     .select-with-status{
         text-align: center;
@@ -217,10 +232,89 @@
         left: 70px;
 
     }
+    .body-sell-wrapper{
+        width: 644px;
+    }
+    .sell-main{
+        width: unset !important;
+    }
+    .sell-main_wrapper{
+        padding: 8px 12px !important;
+    }
+    .select-items{
+        width: 100% !important;
+    }
+    .form-item_title{
+       
+    }
+    .form-items{
+        display: block !important;
+    }
+    .form-brand_title{
+        margin-top: 24px;
+        margin-left: 0 !important;
+    }
+    .image-manager{
+        width: 100%;
+        text-align: center;
+        align-items: center !important;
+       padding-left: 5px;
+    }
+    .input-wrapper{
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+       margin-left: 0 !important;
+    
+    }
+    .form-options{
+        display: flex !important;
+        justify-content: flex-start;
+    }
+    .sell-input_file{
+        width: 95% !important;
+      
+    }
+    .btn_option{
+        padding: unset !important;
+    }
+    .custom-select{
+        margin-left: 0 !important;
+    }
+    .form-sell-wrapper{
+        margin-left: 0 !important;
+    }
+    .carousel_btn-next, .carousel_btn-prev{
+        display: none !important;
+        
+    }
+    .image-carousel__item-list{
+        display: flex;
+        list-style: none;
+        max-width: 100%;
+        overflow-x: auto;
+        padding-left: 0;
+    }
+    .image-carousel__item-list::-webkit-scrollbar{
+        display: none;
+    }
+    .carousel-header_link{
+        font-size: 14px;
+    }
+    .leftArrow, .rightArrow{
+        width: 16px;
+        height: 32px;
+        border-radius: unset;
+    }
+    .arrow{
+        width: 7px;
+        height: 7px;
+    }
+
 }  
 
 /* tablet */
 @media (min-width:740px) and  (max-width :1023px){
+
     .carousel-container{
         max-height:220px;
     }
@@ -241,6 +335,21 @@
     .form-form{
         padding: unset;
     }
+    .select-selected:after{
+        top: 56px !important;
+    }
+    .select-selected.select-arrow-active:after{
+        top: 50px !important;
+    }
+    .select-with-status_icon{
+        position: absolute;
+        top: 8px;
+        left: 135px;
+
+    }
+   
+    
+   
 /* mobile */
 @media (max-width :739px) {
     .carousel-container{
@@ -264,9 +373,7 @@
     .header__cart{
         width: unset;
     }
-    .home-product-origin{
-        display: none;
-    }
+   
     .header__search-checkbox:checked ~ .header__search{
         display: flex;
     }
@@ -317,4 +424,29 @@
     .text-policy{
         padding: 0 5px;
     }   
+   .body-sell-wrapper{
+       width: 100%;
+   }
+   .select-selected:after{
+       top: 56px !important;
+      
+   }
+   .select-selected.select-arrow-active:after{
+       top: 50px !important;
+   }
+   .select-with-status_icon{
+    position: absolute;
+    top: 8px;
+    left: 62px;
+
+}
+   
+}
+@media(width:1024px){
+    .body-sell-wrapper{
+        width: 984px;
+    }
+    .sell-main{
+        width: unset !important;
+    }
 }
