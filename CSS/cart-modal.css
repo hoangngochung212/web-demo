@@ -16,16 +16,21 @@
     color: var(--primary-color);
     font-size: 32px;
     cursor: pointer;
+    z-index: 111;
 }
 
 .product-cart{
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    width: 1200px;
-    display: flex;
+    max-width: 1200px;
+    overflow: auto;
+    height: 100vh;
     border-radius: 5px;
     background-color:var(--white-color) ;
+}
+.product-cart::-webkit-scrollbar{
+    display: none;
 }
 .show-cart{
     width: 480px;
@@ -277,6 +282,17 @@
     font-weight: 500;
     color: #ee4d2d;
 }
+.price-discount{
+    margin-left: 15px;
+    font-size: .75rem;
+    color: #fff;
+    text-transform: uppercase;
+    background: #ee4d2d;
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-weight: 600;
+    line-height: 1;
+}
 .price-details{
     display: flex;
     height: 36px;
@@ -399,12 +415,7 @@
 }
 .status-info{
     display: flex;
-    -webkit-flex-basis: 32.1875rem;
-    -ms-flex-preferred-size: 32.1875rem;
-    flex-basis: 32.1875rem;
-    max-width: 32.1875rem;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
+    flex: 1;
     flex-wrap: wrap;
 }
 

@@ -81,7 +81,7 @@ function setTimer(){
     },3000);
 }
 var sliders = document.querySelector('.carousel-container');
- sliders.addEventListener("mouseover" , ()=> {
+ sliders.addEventListener("mousemove" , ()=> {
         clearInterval(timer);
     });
  sliders.addEventListener("mouseout" , ()=>{

@@ -335,9 +335,6 @@ heartItems.forEach(function(e){
 // modal (fetch api)
 function showModalCart(){
     var items = {};
-
-   
-    
     var cartItems = document.querySelectorAll('.home-product_item');
     cartItems.forEach(element =>{
         element.addEventListener('click',(e)=>{
@@ -443,7 +440,8 @@ function showModalCart(){
                         <div class="price-product">
                             <div class="price-details">
                                 <div class="price-item-old"><span class="price-old">${items.priceOld}</span></div>
-                                <div class="price-item-new"><span class="price-new">₫${items.priceNew}</span></div>
+                                <div class="price-item-new"><span class="price-new">${items.priceNew}</span></div>
+                                <div class="price-discount"> 10% GIẢM </div>
                             </div>
                             <div class="label-cheap">
                                 <img src="./img/revd.png" alt="">

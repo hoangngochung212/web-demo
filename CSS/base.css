@@ -178,9 +178,11 @@ a{
 }
 .select-with-status_icon{
     font-size: 14px;
-    position: relative;
+    position: absolute !important;
     color: rgb(147,147,147);
-    top: 1px;
+    top: 10px !important;
+    left: 172px !important;
+  
 }
 .select-with-status_list{
     position: absolute;

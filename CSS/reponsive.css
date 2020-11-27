@@ -198,7 +198,7 @@
         background-color: #e5e5e5;
         
     }
-    .btn--primary{
+    .btn-primary{
         color: var(--primary-color)  !important;
         background-color: #fff !important;
         font-size: 12px !important;
@@ -226,12 +226,8 @@
        white-space: nowrap;
        text-overflow: ellipsis;
     }
-    .select-with-status_icon{
-        position: absolute;
-        top: 7px;
-        left: 70px;
 
-    }
+
     .body-sell-wrapper{
         width: 644px;
     }
@@ -310,6 +306,51 @@
         height: 7px;
     }
 
+
+    /* Modal */
+    .modal__body{
+        width: 100%;
+    }
+    .product-cart{
+        width: 100%;
+        display: block;
+    }
+    .show-cart{
+       width: 100%;
+    }
+    .img-show{
+        width: 100%;
+        height: 100%;
+    }
+    .img_show-click >.prev,.img_show-click >.next {
+        display: none;
+    }
+    .carousel-img{
+        display: flex;
+    list-style: none;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-left: 0;
+    }
+    .carousel-img::-webkit-scrollbar{
+        display: none;
+    }
+    .product-icon-share{
+        padding: 0 0;
+    }
+    .add-cart{
+        padding: 16px;
+    }
+    .cart-wrap{
+        padding: 0;
+        width: 100%;
+    }
+    .btn-addcart, .btn-handling{
+        min-width: unset;
+    }
+    .product-share-link{
+        display: none;
+    }
 }  
 
 /* tablet */
@@ -342,12 +383,14 @@
         top: 50px !important;
     }
     .select-with-status_icon{
-        position: absolute;
-        top: 8px;
-        left: 135px;
+        position: absolute ;
+        top: 8px !important;
+        left: 135px !important;
 
     }
-   
+    .status-info{
+       
+    }
     
    
 /* mobile */
@@ -419,7 +462,8 @@
   
 
     .social__lable {
-        margin: 0 0;
+      margin: 0 0;
+      margin-left: 1px;
     }
     .text-policy{
         padding: 0 5px;
@@ -436,8 +480,8 @@
    }
    .select-with-status_icon{
     position: absolute;
-    top: 8px;
-    left: 62px;
+    top: 8px !important;
+    left: 62px !important;
 
 }
    
