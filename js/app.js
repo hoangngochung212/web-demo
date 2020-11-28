@@ -341,7 +341,7 @@ function showModalCart(){
             e.preventDefault();
            
             var images = element.querySelectorAll('.home-product-images');
-            console.log(images)
+            
             items.image1 = `.${images[0].src.slice(21)}`;
             items.image2 =  `.${images[1].src.slice(21)}`;
             items.image3 =  `.${images[2].src.slice(21)}`;

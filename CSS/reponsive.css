@@ -120,7 +120,10 @@
         z-index: 11;
         align-items: center;
     }
-    
+    .select-with-status_icon{
+        top : 8px;
+        left: 88% !important;
+    }
     .navbar-item-link,.header__navbar-item-icon,.header__navbar-item{
         color: var(--primary-color);
         font-size: 24px;
@@ -384,8 +387,8 @@
     }
     .select-with-status_icon{
         position: absolute ;
-        top: 8px !important;
-        left: 135px !important;
+        top: 8px ;
+        left: 135px ;
 
     }
     .status-info{
@@ -481,7 +484,7 @@
    .select-with-status_icon{
     position: absolute;
     top: 8px !important;
-    left: 62px !important;
+    left: 80% !important;
 
 }
    
