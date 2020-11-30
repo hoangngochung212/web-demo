@@ -1579,7 +1579,7 @@ i.home-product_action-like-icon_liked{
     top: 44%;
     left: 0;
     z-index: 1;
-    display: block;
+    display: none;
     background-color: #ffff;
     font-size: 20px;
     box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.3);
