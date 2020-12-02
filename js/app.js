@@ -771,16 +771,17 @@ function handleEditProduct(id, event){
     imgSrc = productItem.children[0].children[0].src;
     part = imgSrc.indexOf('img');
     imgElement = imgSrc.slice(part);
-
+    
+    console.log( productItem.children[0].children[1].src)
     
     var images = productItem.querySelectorAll('.sell-product-images')
-    document.querySelectorAll('.img-output')[1].src = "." + productItem.children[0].children[1].src.slice(21);
-    document.querySelectorAll('.img-output')[2].src = "." + productItem.children[0].children[2].src.slice(21);
-    document.querySelectorAll('.img-output')[3].src = "." + productItem.children[0].children[3].src.slice(21);
-    document.querySelectorAll('.img-output')[4].src = "." + productItem.children[0].children[4].src.slice(21);
-    document.querySelectorAll('.img-output')[5].src = "." + productItem.children[0].children[5].src.slice(21);
-    document.querySelectorAll('.img-output')[6].src = "." + productItem.children[0].children[6].src.slice(21);
-    document.querySelectorAll('.img-output')[7].src = "." + productItem.children[0].children[7].src.slice(21);
+    document.querySelectorAll('.img-output')[1].src = productItem.children[0].children[1].src;
+    document.querySelectorAll('.img-output')[2].src = productItem.children[0].children[2].src;
+    document.querySelectorAll('.img-output')[3].src = productItem.children[0].children[3].src;
+    document.querySelectorAll('.img-output')[4].src = productItem.children[0].children[4].src;
+    document.querySelectorAll('.img-output')[5].src = productItem.children[0].children[5].src;
+    document.querySelectorAll('.img-output')[6].src = productItem.children[0].children[6].src;
+    document.querySelectorAll('.img-output')[7].src = productItem.children[0].children[7].src;
     
 
     document.querySelectorAll('.img-output')[0].src = imgElement;
