@@ -759,7 +759,7 @@ function handleEditProduct(id, event){
     
     event.stopPropagation();
     var productItem = document.querySelector('.product-item-' +id);
-    console.log(productItem.children[0])
+    
     //move
     var mainElement = document.querySelector('.body-sell-wrapper');
     mainElement.style.transform ='translateX('+ 0 +'px)';
@@ -772,7 +772,7 @@ function handleEditProduct(id, event){
     part = imgSrc.indexOf('img');
     imgElement = imgSrc.slice(part);
     
-    console.log( productItem.children[0].children[1].src)
+   
     
     var images = productItem.querySelectorAll('.sell-product-images')
     document.querySelectorAll('.img-output')[1].src = productItem.children[0].children[1].src;
@@ -787,7 +787,7 @@ function handleEditProduct(id, event){
     document.querySelectorAll('.img-output')[0].src = imgElement;
     document.querySelector('.btn_option').innerHTML = "Hủy";
     
-    document.querySelector('input[name="name"]').value = productItem.children[0].children[9].children[0].innerHTML;
+    document.querySelector('input[name="name"]').value = productItem.children[0].children[8].children[0].innerHTML;
     document.querySelector('input[name="oldprice"]').value = productItem.children[1].innerHTML;
     document.querySelector('input[name="address"]').value =  productItem.children[2].innerHTML;
     document.querySelector('input[name="brand"]').value = productItem.children[3].innerHTML;
@@ -801,31 +801,28 @@ function handleEditProduct(id, event){
             oldprice: document.querySelector('input[name="oldprice"]').value,
             address: document.querySelector('input[name="address"]').value,
             brand: document.querySelector('input[name="brand"]').value,
-            img: "." + document.querySelectorAll('.img-output')[0].src.slice(21) ,
+            img: document.querySelectorAll('.img-output')[0].src ,
             imgs: [
                 {
-                  img: "." + document.querySelectorAll('.img-output')[1].src.slice(21)
+                  img:  document.querySelectorAll('.img-output')[1].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[2].src.slice(21)
+                  img:  document.querySelectorAll('.img-output')[2].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[3].src.slice(21)
+                  img:  document.querySelectorAll('.img-output')[3].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[4].src.slice(21)
+                  img: document.querySelectorAll('.img-output')[4].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[5].src.slice(21)
+                  img: document.querySelectorAll('.img-output')[5].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[6].src.slice(21)
+                  img:  document.querySelectorAll('.img-output')[6].src
                 },
                 {
-                  img: "." + document.querySelectorAll('.img-output')[7].src.slice(21)
-                },
-                {
-                  img: "." + document.querySelectorAll('.img-output')[8].src.slice(21)
+                  img:  document.querySelectorAll('.img-output')[7].src
                 }
               ]
         };
@@ -904,9 +901,6 @@ function handleCreatProduct(){
                 },
                 {
                   img: "./img/" + image7
-                },
-                {
-                  img: "./img/" + image8
                 }
               ]
         }
@@ -948,7 +942,7 @@ function renderProducts(products){
                 <img src="${product.imgs[4].img}" alt="" class="home-product-images">
                 <img src="${product.imgs[5].img}" alt="" class="home-product-images">
                 <img src="${product.imgs[6].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[7].img}" alt="" class="home-product-images">
+                
                 <div class="home-product_favourite">
                     <span class="home-product_favourite-name">Yêu thích</span>
                 </div>
@@ -1006,7 +1000,7 @@ function renderProducts(products){
                 <img src="${product.imgs[4].img}" alt="" class="sell-product-images">
                 <img src="${product.imgs[5].img}" alt="" class="sell-product-images">
                 <img src="${product.imgs[6].img}" alt="" class="sell-product-images">
-                <img src="${product.imgs[7].img}" alt="" class="sell-product-images">
+               
                 <div class="info-name">
                      <span>${product.name}</span>
                 </div>

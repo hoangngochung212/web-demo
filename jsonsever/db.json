@@ -6,31 +6,28 @@
       "oldprice": "200000",
       "address": "Hà Nội ",
       "brand": "No brand",
-      "img": "./img/aolen-1.jfif",
+      "img": "http://127.0.0.1:5500/img/aolen-1.jfif",
       "imgs": [
         {
-          "img": "./img/aolen-2.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-2.jfif"
         },
         {
-          "img": "./img/aolen-3.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-3.jfif"
         },
         {
-          "img": "./img/aolen-4.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-4.jfif"
         },
         {
-          "img": "./img/aolen-7.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-7.jfif"
         },
         {
-          "img": "./img/aolen-8.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-4.jfif"
         },
         {
-          "img": "./img/aolen-5.jfif"
+          "img": "http://127.0.0.1:5500/img/aolen-6.jfif"
         },
         {
-          "img": "./img/aolen-8.jfif"
-        },
-        {
-          "img": "."
+          "img": "http://127.0.0.1:5500/img/aolen-8.jfif"
         }
       ],
       "id": 1
@@ -41,66 +38,60 @@
       "oldprice": "145000",
       "address": "Hà Nội ",
       "brand": "Unisex",
-      "img": "./img/aothun1.jfif",
+      "img": "http://127.0.0.1:5500/img/aothun1.jfif",
       "imgs": [
         {
-          "img": "./img/aothun2.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun2.jfif"
         },
         {
-          "img": "./img/aothun3.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun3.jfif"
         },
         {
-          "img": "./img/aothun4.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun4.jfif"
         },
         {
-          "img": "./img/aothun5.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun5.jfif"
         },
         {
-          "img": "./img/aothun6.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun6.jfif"
         },
         {
-          "img": "./img/aothun7.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun8.jfif"
         },
         {
-          "img": "./img/aothun8.jfif"
-        },
-        {
-          "img": "./img/aothun2.jfif"
+          "img": "http://127.0.0.1:5500/img/aothun6.jfif"
         }
       ],
       "id": 2
     },
     {
-      "dataset": "trousers",
+      "dataset": "tShirt",
       "name": "Quần kaki nam trung niên ống suông",
       "oldprice": "100000",
       "address": " TP. Hồ Chí Minh",
       "brand": "No brand",
-      "img": "./img/quankaki1.jfif",
+      "img": "http://127.0.0.1:5500/img/quankaki1.jfif",
       "imgs": [
         {
-          "img": "./img/quankaki2.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki2.jfif"
         },
         {
-          "img": "./img/quankaki3.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki3.jfif"
         },
         {
-          "img": "./img/quankaki4.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki4.jfif"
         },
         {
-          "img": "./img/quankaki5.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki5.jfif"
         },
         {
-          "img": "./img/quankaki4.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki7.jfif"
         },
         {
-          "img": "./img/quankaki6.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki6.jfif"
         },
         {
-          "img": "./img/quankaki7.jfif"
-        },
-        {
-          "img": "./img/quankaki8.jfif"
+          "img": "http://127.0.0.1:5500/img/quankaki8.jfif"
         }
       ],
       "id": 3
