@@ -378,7 +378,7 @@
         top: 0px;
         right: 52px;
       }
-    }
+    
     .form-form{
         padding: unset;
     }
@@ -395,7 +395,7 @@
         margin-left: 0 !important;   
     }
     
-   
+}
 /* mobile */
 @media (max-width :739px) {
     .carousel-container{

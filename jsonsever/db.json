@@ -69,6 +69,41 @@
         }
       ],
       "id": 2
+    },
+    {
+      "dataset": "trousers",
+      "name": "Quần kaki nam trung niên ống suông",
+      "oldprice": "100000",
+      "address": " TP. Hồ Chí Minh",
+      "brand": "No brand",
+      "img": "./img/quankaki1.jfif",
+      "imgs": [
+        {
+          "img": "./img/quankaki2.jfif"
+        },
+        {
+          "img": "./img/quankaki3.jfif"
+        },
+        {
+          "img": "./img/quankaki4.jfif"
+        },
+        {
+          "img": "./img/quankaki5.jfif"
+        },
+        {
+          "img": "./img/quankaki4.jfif"
+        },
+        {
+          "img": "./img/quankaki6.jfif"
+        },
+        {
+          "img": "./img/quankaki7.jfif"
+        },
+        {
+          "img": "./img/quankaki8.jfif"
+        }
+      ],
+      "id": 3
     }
   ]
 }

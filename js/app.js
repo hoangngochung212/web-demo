@@ -373,7 +373,7 @@ function showModalCart(){
             <div class="modal__body">
                 <div class="product-cart">
                         <div class="product-exit" id="exit">
-                            <i class="fas fa-times"></i>
+                            <i class="fal fa-times"></i>
                         </div>
                         <div class="show-cart">
                             <div class="img-container">
