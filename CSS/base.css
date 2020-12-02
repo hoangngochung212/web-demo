@@ -84,7 +84,7 @@ a{
 
 .modal__body{
     background-color: var(--white-color);
-    margin: auto;
+    margin:  auto;
     position: relative;
     z-index: 1;
     border-radius: 3px;
@@ -92,6 +92,7 @@ a{
     --growth-from :0.7;
     --growth-to : 1;
     
+
 }
 .form{
     transition: all .3s ;

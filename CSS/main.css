@@ -1596,6 +1596,7 @@ i.home-product_action-like-icon_liked{
 }
 .navbar-exit{
     display: none !important;
+    color: var(--primary-color);
 }
 .header__sort-bar{
     display: none;

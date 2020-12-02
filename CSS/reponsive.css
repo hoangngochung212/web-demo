@@ -81,7 +81,7 @@
         display: block;
     }
     .header__search {
-        margin-left: 12px;
+        margin: 0 12px 0 ;
     }
     .home-button_outline{
         margin: 0;
@@ -96,7 +96,7 @@
         top: 0;
         left:0;
         bottom: 0;
-        width: 375px;
+        width: 300px;
         max-width: 100%;
         height: 100%;
         background-color: var(--white-color);
@@ -259,12 +259,9 @@
         align-items: center !important;
        padding-left: 5px;
     }
-    .input-wrapper{
-        flex: 0 0 33.33333%;
-        max-width: 33.33333%;
-       margin-left: 0 !important;
+   
     
-    }
+    
     .form-options{
         display: flex !important;
         justify-content: flex-start;
@@ -308,10 +305,19 @@
         width: 7px;
         height: 7px;
     }
+    .select-selected.select-arrow-active:after{
+        top: 60% !important;
+    }
+    .select-selected:after{
+        top :70% !important ;
+        
+    }
 
 
     /* Modal */
-
+    .modal__body{
+        width: 100%;
+    }
     .product-cart{
         width: 100%;
         display: block;
@@ -368,7 +374,6 @@
          text-align: right;
      }
      .mobile_category-open{
-        
         position: relative;
         top: 0px;
         right: 52px;
@@ -377,20 +382,17 @@
     .form-form{
         padding: unset;
     }
-    .select-selected:after{
-        top: 56px !important;
-    }
-    .select-selected.select-arrow-active:after{
-        top: 50px !important;
-    }
+ 
     .select-with-status_icon{
         position: absolute ;
         top: 8px ;
         left: 135px ;
 
     }
-    .status-info{
-       
+    .input-wrapper{
+        flex: 0 0 25% ;
+        max-width: 25%;
+        margin-left: 0 !important;   
     }
     
    
@@ -453,8 +455,9 @@
         display: block;
     }
 
-  
+
     .form-login,.form_registration{
+
         width: 320px;
     }
     .form-form{
@@ -485,7 +488,20 @@
     left: 80% !important;
 
 }
+    .input-wrapper{
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+   margin-left: 0 !important;   
    
+ }
+ .details-product{
+    margin-top: 25px;
+    padding: 0 10px;
+
+ }
+ .product-status label {
+     width: 72px;
+ }
 }
 @media(width:1024px){
     .body-sell-wrapper{
@@ -494,4 +510,5 @@
     .sell-main{
         width: unset !important;
     }
+    
 }
