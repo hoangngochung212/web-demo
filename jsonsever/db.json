@@ -6,28 +6,28 @@
       "oldprice": "200000",
       "address": "Hà Nội ",
       "brand": "No brand",
-      "img": "http://127.0.0.1:5500/img/aolen-1.jfif",
+      "img": "http://127.0.0.1:5501/img/aolen-1.jfif",
       "imgs": [
         {
-          "img": "http://127.0.0.1:5500/img/aolen-2.jfif"
+          "img": "./img/aolen-2.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-3.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-3.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-4.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-7.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-7.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-4.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-6.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-6.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aolen-8.jfif"
+          "img": "http://127.0.0.1:5501/img/aolen-8.jfif"
         }
       ],
       "id": 1
@@ -38,28 +38,28 @@
       "oldprice": "145000",
       "address": "Hà Nội ",
       "brand": "Unisex",
-      "img": "http://127.0.0.1:5500/img/aothun1.jfif",
+      "img": "http://127.0.0.1:5501/img/aothun1.jfif",
       "imgs": [
         {
-          "img": "http://127.0.0.1:5500/img/aothun2.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun2.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun3.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun3.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun4.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun5.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun5.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun6.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun6.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun8.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun8.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/aothun6.jfif"
+          "img": "http://127.0.0.1:5501/img/aothun6.jfif"
         }
       ],
       "id": 2
@@ -70,28 +70,28 @@
       "oldprice": "100000",
       "address": " TP. Hồ Chí Minh",
       "brand": "No brand",
-      "img": "http://127.0.0.1:5500/img/quankaki1.jfif",
+      "img": "https://hoangngochung212.github.io/web-demo/img/quankaki1.jfif",
       "imgs": [
         {
-          "img": "http://127.0.0.1:5500/img/quankaki2.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki2.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki3.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki3.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki4.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki5.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki6.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki7.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki7.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki6.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki5.jfif"
         },
         {
-          "img": "http://127.0.0.1:5500/img/quankaki8.jfif"
+          "img": "https://hoangngochung212.github.io/web-demo/img/quankaki8.jfif"
         }
       ],
       "id": 3

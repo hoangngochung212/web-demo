@@ -341,14 +341,13 @@ function showModalCart(){
             e.preventDefault();
            
             var images = element.querySelectorAll('.home-product-images');
-            
-            items.image1 = `.${images[0].src.slice(21)}`;
-            items.image2 =  `.${images[1].src.slice(21)}`;
-            items.image3 =  `.${images[2].src.slice(21)}`;
-            items.image4 =  `.${images[3].src.slice(21)}`;
-            items.image5 =  `.${images[4].src.slice(21)}`;
-            items.image6 =  `.${images[5].src.slice(21)}`;
-            items.image7 =  `.${images[6].src.slice(21)}`;
+            items.image1 =  `./img${images[0].src.slice((images[0].src.indexOf('img')+3))}`;
+            items.image2 =  `./img${images[1].src.slice((images[1].src.indexOf('img')+3))}`;
+            items.image3 =  `./img${images[2].src.slice((images[2].src.indexOf('img')+3))}`;
+            items.image4 =  `./img${images[3].src.slice((images[3].src.indexOf('img')+3))}`;
+            items.image5 =  `./img${images[4].src.slice((images[4].src.indexOf('img')+3))}`;
+            items.image6 =  `./img${images[5].src.slice((images[5].src.indexOf('img')+3))}`;
+            items.image7 =  `./img${images[6].src.slice((images[6].src.indexOf('img')+3))}`;
             var imgSrcs = element.children[0].children[0].src;
             var pos = imgSrcs.indexOf('img') +3;
             var partPath = imgSrcs.slice(pos);
@@ -751,7 +750,11 @@ function handleDeleteProduct(id ,event){
             var productItem =  document.querySelector('.product-item-' +id);
             if(productItem){
                 productItem.remove();
+
             }
+            (products =>{
+                renderProducts(products);
+            });
         })
         
 }
@@ -766,25 +769,19 @@ function handleEditProduct(id, event){
     mainElement.style.transition ='all 500ms ease 0s';
     document.querySelector('#creat-sell').style.display ='none';
     document.querySelector('#save-sell').style.display = 'block';
-    var imgSrc = document.querySelectorAll('.img-output')[0].src;
     //img
-    imgSrc = productItem.children[0].children[0].src;
-    part = imgSrc.indexOf('img');
-    imgElement = imgSrc.slice(part);
+    var imgElements = document.querySelectorAll('.img-output');
     
-   
-    
-    var images = productItem.querySelectorAll('.sell-product-images')
-    document.querySelectorAll('.img-output')[1].src = productItem.children[0].children[1].src;
-    document.querySelectorAll('.img-output')[2].src = productItem.children[0].children[2].src;
-    document.querySelectorAll('.img-output')[3].src = productItem.children[0].children[3].src;
-    document.querySelectorAll('.img-output')[4].src = productItem.children[0].children[4].src;
-    document.querySelectorAll('.img-output')[5].src = productItem.children[0].children[5].src;
-    document.querySelectorAll('.img-output')[6].src = productItem.children[0].children[6].src;
-    document.querySelectorAll('.img-output')[7].src = productItem.children[0].children[7].src;
-    
+    imgElements[0].src = productItem.children[0].children[0].src.slice(21);
+    imgElements[1].src = productItem.children[0].children[1].src.slice(21);
+    imgElements[2].src = productItem.children[0].children[2].src.slice(21);
+    imgElements[3].src = productItem.children[0].children[3].src.slice(21);
+    imgElements[4].src = productItem.children[0].children[4].src.slice(21);
+    imgElements[5].src = productItem.children[0].children[5].src.slice(21);
+    imgElements[6].src = productItem.children[0].children[6].src.slice(21);
+    imgElements[7].src = productItem.children[0].children[7].src.slice(21);
 
-    document.querySelectorAll('.img-output')[0].src = imgElement;
+    
     document.querySelector('.btn_option').innerHTML = "Hủy";
     
     document.querySelector('input[name="name"]').value = productItem.children[0].children[8].children[0].innerHTML;
@@ -792,8 +789,7 @@ function handleEditProduct(id, event){
     document.querySelector('input[name="address"]').value =  productItem.children[2].innerHTML;
     document.querySelector('input[name="brand"]').value = productItem.children[3].innerHTML;
     
-    
-    
+   
     document.getElementById('save-sell').addEventListener('click',()=>{
         var formData = {
             dataset: document.getElementById('select-category').value,
@@ -801,28 +797,28 @@ function handleEditProduct(id, event){
             oldprice: document.querySelector('input[name="oldprice"]').value,
             address: document.querySelector('input[name="address"]').value,
             brand: document.querySelector('input[name="brand"]').value,
-            img: document.querySelectorAll('.img-output')[0].src ,
+            img: imgElements[0].src ,
             imgs: [
                 {
-                  img:  document.querySelectorAll('.img-output')[1].src
+                  img: './img' + imgElements[1].src.slice(imgElements[1].src.indexOf('img')+3)
                 },
                 {
-                  img:  document.querySelectorAll('.img-output')[2].src
+                  img: './img' + imgElements[2].src.slice(imgElements[2].src.indexOf('img')+3)
                 },
                 {
-                  img:  document.querySelectorAll('.img-output')[3].src
+                  img: './img' + imgElements[3].src.slice(imgElements[3].src.indexOf('img')+3)
                 },
                 {
-                  img: document.querySelectorAll('.img-output')[4].src
+                  img: './img' + imgElements[4].src.slice(imgElements[4].src.indexOf('img')+3)
                 },
                 {
-                  img: document.querySelectorAll('.img-output')[5].src
+                  img: './img' + imgElements[5].src.slice(imgElements[5].src.indexOf('img')+3)
                 },
                 {
-                  img:  document.querySelectorAll('.img-output')[6].src
+                  img: './img' + imgElements[6].src.slice(imgElements[6].src.indexOf('img')+3)
                 },
                 {
-                  img:  document.querySelectorAll('.img-output')[7].src
+                  img: './img' + imgElements[7].src.slice(imgElements[7].src.indexOf('img')+3)
                 }
               ]
         };
@@ -872,7 +868,7 @@ function handleCreatProduct(){
         var image5 = document.querySelector('input[id="input-img-5"]').files[0].name;
         var image6 = document.querySelector('input[id="input-img-6"]').files[0].name;
         var image7 = document.querySelector('input[id="input-img-7"]').files[0].name;
-        var image8 = document.querySelector('input[id="input-img-8"]').files[0].name;
+        
         var formData = {
             dataset:dataset,
             name: name,
@@ -988,7 +984,7 @@ function renderProducts(products){
     }
         );
     var sell = products.map(function(product){
-     
+        
         return `
         <div class="sell-main_product product-item-${product.id}">
             <div class="sell-main_info">
