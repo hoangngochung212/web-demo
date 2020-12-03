@@ -772,16 +772,16 @@ function handleEditProduct(id, event){
     //img
     var imgElements = document.querySelectorAll('.img-output');
     
-    imgElements[0].src = productItem.children[0].children[0].src.slice(21);
-    imgElements[1].src = productItem.children[0].children[1].src.slice(21);
-    imgElements[2].src = productItem.children[0].children[2].src.slice(21);
-    imgElements[3].src = productItem.children[0].children[3].src.slice(21);
-    imgElements[4].src = productItem.children[0].children[4].src.slice(21);
-    imgElements[5].src = productItem.children[0].children[5].src.slice(21);
-    imgElements[6].src = productItem.children[0].children[6].src.slice(21);
-    imgElements[7].src = productItem.children[0].children[7].src.slice(21);
+    imgElements[0].src = "./img" + productItem.children[0].children[0].src.slice(productItem.children[0].children[0].src.indexOf('img')+3);
+    imgElements[1].src = "./img" + productItem.children[0].children[1].src.slice(productItem.children[0].children[1].src.indexOf('img')+3);
+    imgElements[2].src = "./img" + productItem.children[0].children[2].src.slice(productItem.children[0].children[2].src.indexOf('img')+3);
+    imgElements[3].src = "./img" + productItem.children[0].children[3].src.slice(productItem.children[0].children[3].src.indexOf('img')+3);
+    imgElements[4].src = "./img" + productItem.children[0].children[4].src.slice(productItem.children[0].children[4].src.indexOf('img')+3);
+    imgElements[5].src = "./img" + productItem.children[0].children[5].src.slice(productItem.children[0].children[5].src.indexOf('img')+3);
+    imgElements[6].src = "./img" + productItem.children[0].children[6].src.slice(productItem.children[0].children[6].src.indexOf('img')+3);
+    imgElements[7].src = "./img" + productItem.children[0].children[7].src.slice(productItem.children[0].children[7].src.indexOf('img')+3);
 
-    
+    console.log(productItem.children[0].children[0].src.slice(productItem.children[0].children[0].src.indexOf('img')+3));
     document.querySelector('.btn_option').innerHTML = "Hủy";
     
     document.querySelector('input[name="name"]').value = productItem.children[0].children[8].children[0].innerHTML;
