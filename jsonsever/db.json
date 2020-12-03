@@ -6,28 +6,28 @@
       "oldprice": "200000",
       "address": "Hà Nội ",
       "brand": "No brand",
-      "img": "http://127.0.0.1:5501/img/aolen-1.jfif",
+      "img": "https://hoangngochung212.github.io/web-demo/img/aolen-1.jfif",
       "imgs": [
         {
-          "img": "./img/aolen-2.jfif"
+          "img": "./img/aolen-4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-3.jfif"
+          "img": "./img/aolen-3.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-4.jfif"
+          "img": "./img/aolen-4.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-7.jfif"
+          "img": "./img/aolen-5.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-4.jfif"
+          "img": "./img/aolen-6.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-6.jfif"
+          "img": "./img/aolen-7.jfif"
         },
         {
-          "img": "http://127.0.0.1:5501/img/aolen-8.jfif"
+          "img": "./img/aolen-8.jfif"
         }
       ],
       "id": 1

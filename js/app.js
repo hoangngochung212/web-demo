@@ -701,7 +701,7 @@ function previewImages(){
            
            e.target.nextElementSibling.children[0].src = `./img/${e.target.files[0].name}`;
            e.target.nextElementSibling.children[0].onload = function(){
-            URL.revokeObjectURL( e.target.nextElementSibling.children[0].src);
+            URL.revokeObjectURL(e.target.nextElementSibling.children[0].src);
 
             e.target.nextElementSibling.children[1].style.zIndex = -1 ;
             e.target.nextElementSibling.style.border = 'none';
@@ -713,10 +713,7 @@ previewImages()
 // fetch api - add cart
 var productApi = 'http://localhost:3002/products';
 function start(){
-    getProducts(products =>{
-        renderProducts(products);
-     
-    });
+    getProducts(renderProducts);
     handleCreatProduct();
 }
 start();
@@ -730,9 +727,7 @@ function creatProducts(data, callback){
     })
         .then(response =>response.json())
         .then(callback)
-        .catch(err => {
-            console.log("lỗi")
-        })
+        
 }
 
 
@@ -747,14 +742,12 @@ function handleDeleteProduct(id ,event){
     })
         .then(response =>response.json())
         .then(function(){
+            getProducts(renderProducts);
             var productItem =  document.querySelector('.product-item-' +id);
             if(productItem){
                 productItem.remove();
-
             }
-            (products =>{
-                renderProducts(products);
-            });
+           
         })
         
 }
@@ -797,7 +790,7 @@ function handleEditProduct(id, event){
             oldprice: document.querySelector('input[name="oldprice"]').value,
             address: document.querySelector('input[name="address"]').value,
             brand: document.querySelector('input[name="brand"]').value,
-            img: imgElements[0].src ,
+            img: imgElements[0].src.slice(imgElements[0].src.indexOf('img')+3) ,
             imgs: [
                 {
                   img: './img' + imgElements[1].src.slice(imgElements[1].src.indexOf('img')+3)
@@ -823,8 +816,9 @@ function handleEditProduct(id, event){
               ]
         };
     
-    editProduct(formData, id ,function(){
+    editProduct(formData, id, function(){
         getProducts(renderProducts);
+        
     });
     })
      
@@ -900,6 +894,7 @@ function handleCreatProduct(){
                 }
               ]
         }
+
         creatProducts(formData,function(){
             getProducts(renderProducts);
         });
@@ -913,7 +908,7 @@ function getProducts(callback){
             return response.json();
         })
         .then(callback)
-        .catch(err => console.log(err))
+        
 }
 function renderProducts(products){
     var listProduct = document.querySelector('.product-main');
