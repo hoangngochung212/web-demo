@@ -1,92 +1,11 @@
+import runSortCart from './sortCart.js' ;
+import * as main from './main.js';
+import {openNavMobile} from './mobile.js';
 
-// carousel img
-function carouselImg() {
-    var carousel = document.querySelector(".carousel-img");
-    var imgItems = document.querySelectorAll(".item img");
-    var btnNext = document.querySelector('.next');
-    var btnPrev = document.querySelector('.prev');
-
-    var index = 0;
-if(imgItems[0])
-{
-    var size = imgItems[0].clientWidth;
-}
-    btnNext.addEventListener('click',()=>{
-        if(index < imgItems.length -5){
-        index++; 
-        } else {
-        index ===0;
-        }
-        carousel.style.transition = "transform 0.4s";
-   
-        carousel.style.transform = 'translateX('+ ((-size-10) * index )  +'px)';
-})
-    btnPrev.addEventListener('click',()=>{
-        
-        if(index === 0){
-            index = 0;
-        } else {
-            index --;
-        }
-        carousel.style.transition = "transform 0.4s";
-        carousel.style.transform = 'translateX('+ (-size * index) +'px)';
-})
-
-}
-
-function moveImg(){
-    var imgElement = document.querySelectorAll('.item');
-    var item = document.createElement('div');
-    item.setAttribute('class','items');
-    imgElement.forEach(function(value){
-        value.addEventListener('mousemove',()=>{
-            value.appendChild(item);
-        })
-    })
-}
-function showImg(){
-    var showImg = document.querySelector('.img-show');
-    var imgItems = document.querySelectorAll('.item');
-
-  imgItems.forEach(function(element){
-      element.addEventListener('mouseover',(value)=>{
-        if(value.target.parentElement.classList.contains('item')){
-            var imgSrc = value.target.src;
-            if(imgSrc){
-                var posItem =imgSrc.indexOf('img') + 3 ;
-                var partItem = imgSrc.slice(posItem);
-                var newItem = {};
-                newItem.img = `img${partItem}`;
-                showImg.innerHTML = ` <img src="${newItem.img}" alt="">`;
-            }
-        }
-      })
-  });
-  moveImg();
-}
-
-
-
-// rate 
-
-function rateHeart(){
-    var heartItem = document.querySelector('.rate_heart');
-    var displayCount = document.querySelector('.product-rated span');
-    var count = parseInt(displayCount.textContent);
-
-heartItem.addEventListener('click',()=>{
-     heartItem.children[0].classList.toggle("rated");
-     
-    if(heartItem.children[0].classList.contains("rated")){
-        count ++ ;
-        displayCount.innerHTML = count;
-    }else{
-        count = count-1;
-        displayCount.innerHTML = count ;
-    }
-   
-})
-}
+main.selectCategory();
+main.showModalSell();
+main.MoveListProduct();
+openNavMobile();
 //color,status
 
 function statusCart() {
@@ -164,7 +83,7 @@ function addcart(){
        if(element.target.classList.contains('btn-addcart') ){
          
            
-            if(document.querySelector('.category-selected')==null && document.querySelector('.variation-selected')==null)
+            if(document.querySelector('.category-selected')==null || document.querySelector('.variation-selected')==null)
             {   
                 element.target.parentElement.parentElement.parentElement.previousElementSibling.children[2].classList.add('notify_active');
                 document.querySelector(".notifi_plz").style.display = 'block';
@@ -276,62 +195,7 @@ function showCart() {
     }
 }
 
-// add class new 
-function addClassPrice(){
-    var addClass = document.querySelectorAll('.home-product_price');
 
-addClass.forEach(value =>{
-    value.children[2].classList.add('price-new');
-})
-
-}
-// sort
-function sortCart(dir){
-    var cart = document.querySelector('.home-product').children[0];
-    var product = cart.querySelectorAll('.col');
-  
-    var arr = Array.from(product).map(element => ({
-        element :element,
-        price : parseFloat(element.querySelector('.price-new').textContent.replace('₫','').replaceAll('.',''))
-    }));
-   
-    var sorted = arr.sort((a,b)=>(a.price - b.price) *dir);
-  
-    sorted.forEach(value =>{
-          cart.appendChild(value.element);
-    });
-}
-
-function runSortCart(){
-    var btnSort = document.querySelectorAll('.select-with-status_link');
-btnSort[0].addEventListener('click',(e)=>{
-    e.preventDefault();
-    document.querySelector('.select-with-status_label').textContent = btnSort[0].textContent ;
-    var dir = btnSort[0].dataset.dir;
-    sortCart(dir);
-    
-});
-btnSort[1].addEventListener('click',(e)=>{
-    e.preventDefault();
-    document.querySelector('.select-with-status_label').textContent =btnSort[1].textContent ;
-    var dir = btnSort[1].dataset.dir;
-    sortCart(dir);
-    
-})
-}
-// rate heart 
-function rateHearts(){
-    var heartItems = document.querySelectorAll('.heart-item');
-
-heartItems.forEach(function(e){
-    e.addEventListener('click',(val)=>{
-        val.preventDefault();
-        val.stopPropagation();
-        e.children[0].classList.toggle('heart_active');
-    })
-})
-
-}
 // modal (fetch api)
 function showModalCart(){
     var items = {};
@@ -603,7 +467,7 @@ function showModalCart(){
             bodyElement.insertBefore(cartDetailS,bodyElement.children[0])
             // test();
             exitModal();
-            rateHeart();
+            main.rateHeart();
             countProduct();
             statusCart();
             addcart();
@@ -614,8 +478,6 @@ function showModalCart(){
         })
   
 }
-
-
 // var detailsApi = 'http://localhost:3002/product-details';
 // function starts(id){
 //     getDetails(id,function(details){
@@ -691,8 +553,6 @@ function exitModal(){
     })
 }
 
-
-
 function previewImages(){
     var inputsElement = document.querySelectorAll('input[name="imgs"]');
 
@@ -709,7 +569,8 @@ function previewImages(){
         })
     })
 }
-previewImages()
+previewImages();
+
 // fetch api - add cart
 var productApi = 'http://localhost:3002/products';
 function start(){
@@ -730,8 +591,8 @@ function creatProducts(data, callback){
         
 }
 
-
-function handleDeleteProduct(id ,event){
+window.handleDeleteProduct = function handleDeleteProduct(id ,event){
+   
     event.stopPropagation();
     fetch(productApi + '/' + id,{
         method: 'Delete',
@@ -751,8 +612,7 @@ function handleDeleteProduct(id ,event){
         })
         
 }
-function handleEditProduct(id, event){
-    
+window.handleEditProduct = function handleEditProduct(id, event){
     event.stopPropagation();
     var productItem = document.querySelector('.product-item-' +id);
     
@@ -774,7 +634,7 @@ function handleEditProduct(id, event){
     imgElements[6].src = "./img" + productItem.children[0].children[6].src.slice(productItem.children[0].children[6].src.indexOf('img')+3);
     imgElements[7].src = "./img" + productItem.children[0].children[7].src.slice(productItem.children[0].children[7].src.indexOf('img')+3);
 
-    console.log(productItem.children[0].children[0].src.slice(productItem.children[0].children[0].src.indexOf('img')+3));
+   
     document.querySelector('.btn_option').innerHTML = "Hủy";
     
     document.querySelector('input[name="name"]').value = productItem.children[0].children[8].children[0].innerHTML;
@@ -925,14 +785,14 @@ function renderProducts(products){
         <div class="col l-2-4 m-4 c-6">
         <div class="home-product_item">
             <div class="home-product_img">
-                <img src="${product.img}" alt="" class="home-product-item_img">
-                <img src="${product.imgs[0].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[1].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[2].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[3].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[4].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[5].img}" alt="" class="home-product-images">
-                <img src="${product.imgs[6].img}" alt="" class="home-product-images">
+                <img src="${product.img}" alt="photo" class="home-product-item_img">
+                <img src="${product.imgs[0].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[1].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[2].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[3].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[4].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[5].img}" alt="photo" class="home-product-images">
+                <img src="${product.imgs[6].img}" alt="photo" class="home-product-images">
                 
                 <div class="home-product_favourite">
                     <span class="home-product_favourite-name">Yêu thích</span>
@@ -951,7 +811,7 @@ function renderProducts(products){
                 <div class="home-product_price">
                     <span class="price old-price">${formatter.format(product.oldprice).replaceAll(',','.')}</span>
                     <span class="unit"></span>
-                    <span class="price">${formatter.format(newPrice).replaceAll(',','.')}</span>
+                    <span class="price price-new">${formatter.format(newPrice).replaceAll(',','.')}</span>
                 </div>
                 <div class="home-product_action">
                     <div class="home-product_action-like home-product_action-liked">
@@ -979,7 +839,7 @@ function renderProducts(products){
     }
         );
     var sell = products.map(function(product){
-        
+
         return `
         <div class="sell-main_product product-item-${product.id}">
             <div class="sell-main_info">
@@ -1008,8 +868,7 @@ function renderProducts(products){
     })
     listSell.innerHTML = sell.join('');
     listProduct.innerHTML = htmls.join('');
-    rateHearts();
-    addClassPrice();
+    main.rateHearts();
     showModalCart();
     runSortCart();
 }

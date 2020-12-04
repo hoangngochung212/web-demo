@@ -99,7 +99,7 @@
     height: 25px;
     border: none;
     margin-left: 5px;
-    background-image: url(/img/shareon.png);
+    background-image: url(../img/shareon.png);
     background-size:100%;
     background-color: transparent;
     cursor: pointer;

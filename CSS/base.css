@@ -32,7 +32,10 @@ li{
 a{
     text-decoration: none;
 }
-
+img{
+    object-fit: cover;
+    
+}
 /* Reponsive */
 
 .grid__row{
