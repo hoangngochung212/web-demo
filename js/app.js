@@ -624,7 +624,7 @@ window.handleEditProduct = function handleEditProduct(id, event){
     document.querySelector('#save-sell').style.display = 'block';
     //img
     var imgElements = document.querySelectorAll('.img-output');
-    
+    console.log(productItem.children[0].children[0])
     imgElements[0].src = "./img" + productItem.children[0].children[0].src.slice(productItem.children[0].children[0].src.indexOf('img')+3);
     imgElements[1].src = "./img" + productItem.children[0].children[1].src.slice(productItem.children[0].children[1].src.indexOf('img')+3);
     imgElements[2].src = "./img" + productItem.children[0].children[2].src.slice(productItem.children[0].children[2].src.indexOf('img')+3);
@@ -650,7 +650,7 @@ window.handleEditProduct = function handleEditProduct(id, event){
             oldprice: document.querySelector('input[name="oldprice"]').value,
             address: document.querySelector('input[name="address"]').value,
             brand: document.querySelector('input[name="brand"]').value,
-            img: imgElements[0].src.slice(imgElements[0].src.indexOf('img')+3) ,
+            img: './img' +  imgElements[0].src.slice(imgElements[0].src.indexOf('img')+3) ,
             imgs: [
                 {
                   img: './img' + imgElements[1].src.slice(imgElements[1].src.indexOf('img')+3)
