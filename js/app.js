@@ -572,7 +572,7 @@ function previewImages(){
 previewImages();
 
 // fetch api - add cart
-var productApi = 'http://localhost:3002/products';
+var productApi = 'https://json-server-web-demo.herokuapp.com/products';
 function start(){
     getProducts(renderProducts);
     handleCreatProduct();
