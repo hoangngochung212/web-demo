@@ -141,7 +141,7 @@ if(imgItems[0])
     var size = imgItems[0].clientWidth;
 }
     btnNext.addEventListener('click',()=>{
-        if(index < imgItems.length -5){
+        if(index < imgItems.length -7){
         index++; 
         } else {
         index ===0;

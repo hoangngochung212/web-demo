@@ -1,5 +1,111 @@
-.main{
+.loader {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 10% 0;
     overflow: hidden;
+   
+}
+.dot-falling {
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #EE4D2D;
+    color: #EE4D2D;
+    box-shadow: 9999px 0 0 0 #EE4D2D;
+    animation: dotFalling 1s infinite linear;
+    animation-delay: .1s;
+  }
+  
+  .dot-falling::before, .dot-falling::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+  
+  .dot-falling::before {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color:#EE4D2D;
+    color: #EE4D2D;
+    animation: dotFallingBefore 1s infinite linear;
+    animation-delay: 0s;
+  }
+  
+  .dot-falling::after {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #EE4D2D;
+    color: #EE4D2D;
+    animation: dotFallingAfter 1s infinite linear;
+    animation-delay: .2s;
+  }
+  
+  
+
+  @keyframes dotFalling {
+    0% {
+      box-shadow: 9999px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%,
+    50%,
+    75% {
+      box-shadow: 9999px 0 0 0 #EE4D2D;;
+    }
+    100% {
+      box-shadow: 9999px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  
+  @keyframes dotFallingBefore {
+    0% {
+      box-shadow: 9984px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%,
+    50%,
+    75% {
+      box-shadow: 9984px 0 0 0 #EE4D2D;;
+    }
+    100% {
+      box-shadow: 9984px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  
+  @keyframes dotFallingAfter {
+    0% {
+      box-shadow: 10014px -15px 0 0 rgba(152, 128, 255, 0);
+    }
+    25%,
+    50%,
+    75% {
+      box-shadow: 10014px 0 0 0 #EE4D2D;
+    }
+    100% {
+      box-shadow: 10014px 15px 0 0 rgba(152, 128, 255, 0);
+    }
+  }
+  
+
+.main{
+    display: none;
+    overflow: hidden;
+    animation: fadein 2s linear;
+    transition: all 2s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 .header{
     height: 120px;

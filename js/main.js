@@ -1,4 +1,14 @@
+// loading
 
+function loadingPage() {
+  var myVar = setTimeout(showPage, 3000);
+}
+function showPage() {
+  document.querySelector('.loader').style.display = "none";
+  document.querySelector('.main').style.display = "block";
+
+}
+loadingPage();
 // modal--sell
 function showModalSell(){
     var showSell = document.querySelectorAll('.header__navbar-item--set')[0];
